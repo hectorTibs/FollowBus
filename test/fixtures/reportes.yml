@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empresaid: 1
+  rutaid: 1
+  comentario: MyText
+  compartir: false
+  redsocial: 1
+  postred: MyText
+
+two:
+  empresaid: 1
+  rutaid: 1
+  comentario: MyText
+  compartir: false
+  redsocial: 1
+  postred: MyText

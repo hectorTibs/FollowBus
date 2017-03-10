@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Empresaid:</strong>
+  <%= @reporte.empresaid %>
+</p>
+
+<p>
+  <strong>Rutaid:</strong>
+  <%= @reporte.rutaid %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @reporte.comentario %>
+</p>
+
+<p>
+  <strong>Compartir:</strong>
+  <%= @reporte.compartir %>
+</p>
+
+<p>
+  <strong>Redsocial:</strong>
+  <%= @reporte.redsocial %>
+</p>
+
+<p>
+  <strong>Postred:</strong>
+  <%= @reporte.postred %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>

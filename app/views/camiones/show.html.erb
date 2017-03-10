@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clave:</strong>
+  <%= @camione.clave %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @camione.nombre %>
+</p>
+
+<p>
+  <strong>Tiporuta:</strong>
+  <%= @camione.tiporuta %>
+</p>
+
+<p>
+  <strong>Municipioinicio:</strong>
+  <%= @camione.municipioinicio %>
+</p>
+
+<p>
+  <strong>Municipiofin:</strong>
+  <%= @camione.municipiofin %>
+</p>
+
+<%= link_to 'Edit', edit_camione_path(@camione) %> |
+<%= link_to 'Back', camiones_path %>

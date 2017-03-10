@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310162935) do
+ActiveRecord::Schema.define(version: 20170310231129) do
 
-  create_table "empresas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "camiones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "clave"
+    t.string   "nombre"
+    t.string   "tiporuta"
+    t.string   "municipioinicio"
+    t.string   "municipiofin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "empresas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.string   "Localidad"
@@ -20,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170310162935) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "incidencia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "incidencia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "EmpresaId"
     t.integer  "RutaId"
     t.text     "Comentario", limit: 65535
@@ -31,14 +41,25 @@ ActiveRecord::Schema.define(version: 20170310162935) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "redes_sociales", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "redes_sociales", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ruta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "reportes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "empresaid"
+    t.integer  "rutaid"
+    t.text     "comentario", limit: 65535
+    t.boolean  "compartir"
+    t.integer  "redsocial"
+    t.text     "postred",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "ruta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.string   "TipoRuta"

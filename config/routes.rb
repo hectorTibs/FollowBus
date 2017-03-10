@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reportes
+  resources :camiones
   get 'login/index'
 
   get 'maps/index'

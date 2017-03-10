@@ -1,0 +1,47 @@
+<%= form_for(reporte) do |f| %>
+  <% if reporte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
+
+      <ul>
+      <% reporte.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :empresaid %>
+    <%= f.number_field :empresaid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rutaid %>
+    <%= f.number_field :rutaid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comentario %>
+    <%= f.text_area :comentario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :compartir %>
+    <%= f.check_box :compartir %>
+  </div>
+
+  <div class="field">
+    <%= f.label :redsocial %>
+    <%= f.number_field :redsocial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postred %>
+    <%= f.text_area :postred %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

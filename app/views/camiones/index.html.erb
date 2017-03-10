@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Camiones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clave</th>
+      <th>Nombre</th>
+      <th>Tiporuta</th>
+      <th>Municipioinicio</th>
+      <th>Municipiofin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @camiones.each do |camione| %>
+      <tr>
+        <td><%= camione.clave %></td>
+        <td><%= camione.nombre %></td>
+        <td><%= camione.tiporuta %></td>
+        <td><%= camione.municipioinicio %></td>
+        <td><%= camione.municipiofin %></td>
+        <td><%= link_to 'Show', camione %></td>
+        <td><%= link_to 'Edit', edit_camione_path(camione) %></td>
+        <td><%= link_to 'Destroy', camione, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Camione', new_camione_path %>
