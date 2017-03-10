@@ -1,0 +1,2 @@
+class RedesSociale < ApplicationRecord
+end

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'login/index'
+
+  get 'maps/index'
+
+  resources :incidencia
+  resources :ruta
+  resources :redes_sociales
   resources :empresas
   get 'index/welcome'
 root 'index#welcome'

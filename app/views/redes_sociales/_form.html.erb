@@ -1,0 +1,27 @@
+<%= form_for(redes_sociale) do |f| %>
+  <% if redes_sociale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(redes_sociale.errors.count, "error") %> prohibited this redes_sociale from being saved:</h2>
+
+      <ul>
+      <% redes_sociale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Clave %>
+    <%= f.text_field :Clave %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Nombre %>
+    <%= f.text_field :Nombre %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

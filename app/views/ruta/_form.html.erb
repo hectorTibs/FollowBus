@@ -1,0 +1,42 @@
+<%= form_for(rutum) do |f| %>
+  <% if rutum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rutum.errors.count, "error") %> prohibited this rutum from being saved:</h2>
+
+      <ul>
+      <% rutum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Clave %>
+    <%= f.text_field :Clave %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Nombre %>
+    <%= f.text_field :Nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TipoRuta %>
+    <%= f.text_field :TipoRuta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :MunicipioInicio %>
+    <%= f.text_field :MunicipioInicio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :MunicipioFin %>
+    <%= f.text_field :MunicipioFin %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

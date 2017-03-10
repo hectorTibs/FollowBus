@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310000025) do
+ActiveRecord::Schema.define(version: 20170310162935) do
 
   create_table "empresas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "Clave"
@@ -18,6 +18,34 @@ ActiveRecord::Schema.define(version: 20170310000025) do
     t.string   "Localidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "incidencia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "EmpresaId"
+    t.integer  "RutaId"
+    t.text     "Comentario", limit: 65535
+    t.boolean  "Compartir"
+    t.integer  "RedSocial"
+    t.text     "PostRed",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "redes_sociales", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "Clave"
+    t.string   "Nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ruta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "Clave"
+    t.string   "Nombre"
+    t.string   "TipoRuta"
+    t.string   "MunicipioInicio"
+    t.string   "MunicipioFin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

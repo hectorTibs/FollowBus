@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Clave: MyString
+  Nombre: MyString
+  TipoRuta: MyString
+  MunicipioInicio: MyString
+  MunicipioFin: MyString
+
+two:
+  Clave: MyString
+  Nombre: MyString
+  TipoRuta: MyString
+  MunicipioInicio: MyString
+  MunicipioFin: MyString

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redes Sociales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clave</th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redes_sociales.each do |redes_sociale| %>
+      <tr>
+        <td><%= redes_sociale.Clave %></td>
+        <td><%= redes_sociale.Nombre %></td>
+        <td><%= link_to 'Show', redes_sociale %></td>
+        <td><%= link_to 'Edit', edit_redes_sociale_path(redes_sociale) %></td>
+        <td><%= link_to 'Destroy', redes_sociale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redes Sociale', new_redes_sociale_path %>
