@@ -1,6 +1,26 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="jumbotron boxlogin">
+    <center>
+      <img src="images/logo_FB.svg" alt="Follow Bus Logo" heigt="100" width="130">
+      <div class="pen-title">
+        <h3>¡Bienvenido de vuelta!</h3>
+      </div>
+      <img src="images/imagen.svg" alt="Bus Logo" heigt="310" width="310">
+    </center>
+    <div class="pen-title">
+      <h5>Selecciona como acceder</h5>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button class="Facebook">Facebook</button>
+      </div>
+      <div class="col-md-6">
+        <button class="Twitter">Twitter</button>
+      </div>
+    </div>
+      <div class="cta"><a href="http:""">¿Olvidaste tu contraseña?</a></div>
+  </br>
+ 
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -22,5 +42,4 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+  </div>
