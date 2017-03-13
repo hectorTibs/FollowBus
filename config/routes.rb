@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :reportes
   resources :camiones
   get 'login/index'
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   resources :redes_sociales
   resources :empresas
   get 'index/welcome'
-root 'index#welcome'
+root 'home#index'
+match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
