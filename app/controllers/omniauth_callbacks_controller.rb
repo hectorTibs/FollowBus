@@ -7,7 +7,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "twitter".capitalize) if is_navigational_format?
     else
       session["devise.twitter_data"] = env["omniauth.auth"]
-      redirect_to "http://www.rubyonrails.org"
+     # redirect_to new_user_registration_url
     end
   end
  
@@ -19,7 +19,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "facebook".capitalize) if is_navigational_format?
     else
       session["devise.facebook_data"] = env["omniauth.auth"]
-     redirect_to "http://www.rubyonrails.org"
+    # redirect_to new_user_registration_url
     end
   end
  
@@ -27,7 +27,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if resource.email_verified?
       super resource # Acción por defecto de Devise (si no está configurada, va al root_path)
     else
-      finish_signup_path(resource)
+     #finish_signup_path(resource)
     end
   end
  
