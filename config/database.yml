@@ -49,6 +49,6 @@ development:
 #
 production:
   <<: *default
-  database: auto_production
-  username: auto
-  password: <%= ENV['AUTO_DATABASE_PASSWORD'] %>
+  database: 23.229.162.72
+  username: adminfollowbus
+  password: FollowBus2017
