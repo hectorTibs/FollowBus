@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :reportes
   resources :camiones
-  get 'login/index'
+  #sget 'login/index'
 
-  get 'maps/index'
+  #get 'maps/index'
 
   resources :incidencia
   resources :ruta
   resources :redes_sociales
   resources :empresas
-  get 'index/welcome'
+  #get 'index/welcome'
 root 'home#index'
 match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
 
