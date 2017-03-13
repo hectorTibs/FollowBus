@@ -49,7 +49,5 @@ development:
 #
 production:
   <<: *default
-   host: 23.229.162.72
   database: FollowBusDemo
-  username: adminfollowbus
-  password: FollowBus2017
+  
