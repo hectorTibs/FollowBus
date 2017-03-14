@@ -1,45 +1,104 @@
-<div class="jumbotron boxlogin">
+<script>
+function myFunction() {
+   location.href = "/users/auth/facebook";
+}
+</script>
+<div class="row">
+
+<div class="col-md-10 col-md-offset-1">
+  
+
+<!--<div class="jumbotron boxlogin">-->
     <center>
-      <img src="images/logo_FB.svg" alt="Follow Bus Logo" heigt="100" width="130">
+     <!-- <img src="../assets/images/logo_FB.svg" alt="Follow Bus Logo" heigt="100" width="130">-->
+     <div class="row">
+       <div class="col-md-4 col-md-offset-4">
+            <%= image_tag("logo_FB.svg", :alt => "Follow Bus Logo", class: "img-responsive") %>
+       </div>
+     </div>
+     
       <div class="pen-title">
-        <h3>¡Bienvenido de vuelta!</h3>
+        <h1>¡Bienvenido de vuelta!</h1>
       </div>
-      <img src="images/imagen.svg" alt="Bus Logo" heigt="310" width="310">
+     <!-- <img src="../assets/images/imagen.svg" alt="Bus Logo" heigt="310" width="310">-->
+   
+      <div class="row">
+       <div class="col-md-12">
+             <%= image_tag("imagen.svg", :alt => "Bus Logo", class: "img-responsive")%>
+       </div>
+     </div>
     </center>
-    <div class="pen-title">
-      <h5>Selecciona como acceder</h5>
-    </div>
+  <!--  <div class="pen-title">
+      <h3>Selecciona como acceder</h3>
+    </div>-->
+    <div class="row">
+   <div class="col-md-12">  
+   <h2>  Selecciona como acceder</h2>
+   </div>
+     
+   </div>
     <div class="row">
       <div class="col-md-6">
-        <button class="Facebook">Facebook</button>
+        <button id="myBtnFB" class="Facebook" onclick="myFunction()">Facebook</button>
+  <%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <% end -%>
+<% end -%>
       </div>
-      <div class="col-md-6">
+
+       <div class="col-md-6">
         <button class="Twitter">Twitter</button>
+      
       </div>
     </div>
-      <div class="cta"><a href="http:""">¿Olvidaste tu contraseña?</a></div>
+    <br>
+   <div class="row">
+   <div class="col-md-5 col-md-offset-7">  
+   <div class="cta"><a href="#" style="font-size: 26px;">Otras Redes Sociales</a></div>
+   </div>
+     
+   </div>
+      
   </br>
- 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+
+  
+      <div class="form-group">
+      <div class="input-group-lg">
+    <!--<%= f.label :email %><br />-->
+    <%= f.email_field :email, autofocus: true, class: "form-control",placeholder: "Usuario o Correo Electronico" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+
+  <div class="form-group">
+   <div class="input-group-lg">
+   <!-- <%= f.label :password %><br />-->
+    <%= f.password_field :password, autocomplete: "off",class: "form-control",placeholder: "Contraseña" %>
+     </div>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+ <!-- <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
-
-  <div class="actions">
+  <% end -%>-->
+<center>
+        <input type="submit" class="log" value="Conectarse">
+      </center>
+ <!-- <div class="actions">
     <%= f.submit "Log in" %>
-  </div>
+  </div>-->
+    <div class="row">
+   <div class="col-md-10 col-md-offset-2">  
+    <div class="cta2" style="font-size: 26px;">¿No estás inscrito?<a href="#" style="font-size: 26px;"> Deseo inscribirme ahora</a></div>
+   </div>
+     
+   </div>
+ 
 <% end %>
   </div>
+  </div>
+  <!--</div>-->
