@@ -1,6 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre test:</strong>
+  <strong>Nombre test Compartir:</strong>
   <%= @reporte.nombre %>
 </p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @reporte.edad %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @reporte.sexo %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @reporte.hora %>
+</p>
+
+<p>
+  <strong>Rutaid:</strong>
+  <%= @reporte.rutaid %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @reporte.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>
