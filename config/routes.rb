@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'maps/index'
   get 'reportes/index'
+   get 'reportes/compartir'
 
   resources :incidencia
   resources :ruta
