@@ -1,5 +1,5 @@
 class ReportesController < ApplicationController
-  before_action :set_reporte, only: [:show, :edit, :update, :destroy]
+  before_action :set_reporte, only: [:show, :edit, :update, :destroy,:compartir]
 
   # GET /reportes
   # GET /reportes.json
