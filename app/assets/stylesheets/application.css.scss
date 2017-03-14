@@ -60,5 +60,32 @@ font-size: 26px;
 
 /*Reportes Compartir*/
 
+.Siguiente {
+  border-radius: 40px;
+  cursor: pointer;
+  background: #3aaf86;
+  width: 40%;
+  border: 0;
+  padding: 15px 15px;
+  color: #ffffff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin-right: 250px;
+  font-size: 26px;
+}
 
+.Cancelar {
+  border-radius: 40px;
+  cursor: pointer;
+  background: #efeded;
+  width: 40%;
+  border: 0;
+  padding: 15px 15px;
+  color: #000000;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin-left: 250px;
+  border-color: #000000;
+  font-size: 26px;
+}
 /*Reportes Compartir*/
