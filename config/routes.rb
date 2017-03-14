@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   get 'login/index'
 
   get 'maps/index'
+  get 'reportes/index'
 
   resources :incidencia
   resources :ruta
   resources :redes_sociales
   resources :empresas
   get 'index/welcome'
-root 'login#index'
+root 'reportes#new'
 get '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
