@@ -1,47 +1,44 @@
-<%= form_for(reporte) do |f| %>
-  <% if reporte.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
-
-      <ul>
-      <% reporte.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<center>
+    <div class="jumbotron boxtext1">
+      <h2>Compartenos tu experiencia</h2>
+      <p>Para compartir tu experiencia sobre el servicio
+        -bueno o malo- que prestan las rutas urbanas
+        y sus operadores es necesario expliques de
+        forma detallada el suceso</p>
     </div>
-  <% end %>
+    <form method="POST" name="flogin" id="flogin">
+      <!--<label>Nombre de usuario</label>-->
+      <input type="text" placeholder="Nombre" name="name" id="name" class="form-control Nombre">
+      <div class="row Formulario">
+        <div class="col-md-6">
+          <input type="text" placeholder="Edad" name="age" id="age" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Sexo" name="gen" id="gen" class="form-control">
+        </div>
+      </div>
+      <div class="row Formulario">
+        <div class="col-md-6">
+          <input type="text" placeholder="Hora del suceso" name="time" id="time" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Ruta" name="ruta" id="ruta" class="form-control">
+        </div>
+      </div>
+      </br>
+      <label>Descripcion del suceso</label>
+      <textarea  rows="6" name="name" id="name" class="form-control Nombre"></textarea>
+      </br>
+      <div class="row">
+        <div class="col-md-6">
+          <button class="Cancelar">Cancelar</button>
+        </div>
+        <div class="col-md-6">
+          <button class="Siguiente">Siguiente paso</button>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :empresaid %>
-    <%= f.number_field :empresaid %>
-  </div>
 
-  <div class="field">
-    <%= f.label :rutaid %>
-    <%= f.number_field :rutaid %>
-  </div>
 
-  <div class="field">
-    <%= f.label :comentario %>
-    <%= f.text_area :comentario %>
-  </div>
-
-  <div class="field">
-    <%= f.label :compartir %>
-    <%= f.check_box :compartir %>
-  </div>
-
-  <div class="field">
-    <%= f.label :redsocial %>
-    <%= f.number_field :redsocial %>
-  </div>
-
-  <div class="field">
-    <%= f.label :postred %>
-    <%= f.text_area :postred %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    </form>
+</center>
