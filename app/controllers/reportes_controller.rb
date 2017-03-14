@@ -30,8 +30,8 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-       format.html { redirect_to :action=>'compartir', @reporte, notice: 'Reporte was successfully created.' }
-       #format.html { redirect_to :controller =>'reportes',:action => 'compartir', :id=>@reporte.id}
+  #     format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
+       format.html { render action: "compartir"}
     
         format.json { render :compartir, status: :created, location: @reporte }
       else
