@@ -5,12 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Empresaid</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Sexo</th>
+      <th>Hora</th>
       <th>Rutaid</th>
-      <th>Comentario</th>
-      <th>Compartir</th>
-      <th>Redsocial</th>
-      <th>Postred</th>
+      <th>Descripcion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +18,12 @@
   <tbody>
     <% @reportes.each do |reporte| %>
       <tr>
-        <td><%= reporte.empresaid %></td>
+        <td><%= reporte.nombre %></td>
+        <td><%= reporte.edad %></td>
+        <td><%= reporte.sexo %></td>
+        <td><%= reporte.hora %></td>
         <td><%= reporte.rutaid %></td>
-        <td><%= reporte.comentario %></td>
-        <td><%= reporte.compartir %></td>
-        <td><%= reporte.redsocial %></td>
-        <td><%= reporte.postred %></td>
+        <td><%= reporte.descripcion %></td>
         <td><%= link_to 'Show', reporte %></td>
         <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
         <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>

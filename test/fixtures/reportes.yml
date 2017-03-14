@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  empresaid: 1
+  nombre: MyString
+  edad: 1
+  sexo: 1
+  hora: 2017-03-14
   rutaid: 1
-  comentario: MyText
-  compartir: false
-  redsocial: 1
-  postred: MyText
+  descripcion: MyString
 
 two:
-  empresaid: 1
+  nombre: MyString
+  edad: 1
+  sexo: 1
+  hora: 2017-03-14
   rutaid: 1
-  comentario: MyText
-  compartir: false
-  redsocial: 1
-  postred: MyText
+  descripcion: MyString

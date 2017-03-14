@@ -31,41 +31,47 @@
   <% end %>
     <div class="form-group">
       <div class="input-group-lg">
-    <!--<%= f.label :email %><br />-->
-      <%= f.number_field :empresaid, autofocus: true, class: "form-control",placeholder: "Empresa"  %>
+ 
+      <%= f.text_field :nombre, autofocus: true, class: "form-control",placeholder: "Nombre"  %>
    
     </div>
   </div>
 
 
-  <div class="field">
-    <%= f.label :rutaid %>
-    <%= f.number_field :rutaid %>
+ <div class="form-group">
+      <div class="input-group-lg">
+
+    <%= f.number_field :edad, autofocus: true, class: "form-control",placeholder: "Edad" %>
+     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :comentario %>
-    <%= f.text_area :comentario %>
+  <div class="form-group">
+      <div class="input-group-lg">
+  
+    <%= f.number_field :sexo, autofocus: true, class: "form-control",placeholder: "Sexo" %>
+   </div>
   </div>
 
-  <div class="field">
-    <%= f.label :compartir %>
-    <%= f.check_box :compartir %>
+   <div class="form-group">
+      <div class="input-group-lg">
+  
+    <%= f.date_select :hora, autofocus: true, class: "form-control",placeholder: "Hora" %>
+   </div>
   </div>
-
-  <div class="field">
-    <%= f.label :redsocial %>
-    <%= f.number_field :redsocial %>
+     <div class="form-group">
+      <div class="input-group-lg">
+  
+    <%= f.number_field :rutaid, autofocus: true, class: "form-control",placeholder: "Ruta" %>
+   </div>
   </div>
-
-  <div class="field">
-    <%= f.label :postred %>
-    <%= f.text_area :postred %>
+  <div class="form-group">
+      <div class="input-group-lg">
+  
+    <%= f.text_field :descripcion, autofocus: true, class: "form-control",placeholder: "Descripcion" %>
+   </div>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-    
 

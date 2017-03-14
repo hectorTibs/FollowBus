@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Empresaid:</strong>
-  <%= @reporte.empresaid %>
+  <strong>Nombre:</strong>
+  <%= @reporte.nombre %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @reporte.edad %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @reporte.sexo %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @reporte.hora %>
 </p>
 
 <p>
@@ -11,23 +26,8 @@
 </p>
 
 <p>
-  <strong>Comentario:</strong>
-  <%= @reporte.comentario %>
-</p>
-
-<p>
-  <strong>Compartir:</strong>
-  <%= @reporte.compartir %>
-</p>
-
-<p>
-  <strong>Redsocial:</strong>
-  <%= @reporte.redsocial %>
-</p>
-
-<p>
-  <strong>Postred:</strong>
-  <%= @reporte.postred %>
+  <strong>Descripcion:</strong>
+  <%= @reporte.descripcion %>
 </p>
 
 <%= link_to 'Edit', edit_reporte_path(@reporte) %> |
