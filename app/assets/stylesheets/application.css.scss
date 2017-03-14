@@ -65,7 +65,7 @@ html{
 }
 
 body{
-	background-image: url(<%= asset_path MapBackground.png %>);color: #666666;
+	background-image: url(asset-path('MapBackground.png') %>);color: #666666;
 }
 
 .Menu{
