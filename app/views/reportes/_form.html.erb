@@ -10,12 +10,10 @@
          
     </div>
     <div class="row">
-      <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-3">
    
 
-      </div>
-
-    </div>
+    
 
     <%= form_for(reporte) do |f| %>
   <% if reporte.errors.any? %>
@@ -29,40 +27,54 @@
       </ul>
     </div>
   <% end %>
-    <div class="form-group">
+  <div class="row">
+    <div class="col-md-12">
+       <div class="form-group">
       <div class="input-group-lg">
  
       <%= f.text_field :nombre, autofocus: true, class: "form-control",placeholder: "Nombre"  %>
    
     </div>
   </div>
+    </div>
+  </div>
+   
 
-
+<div class="row">
+<div class="col-md-6">
  <div class="form-group">
       <div class="input-group-lg">
 
     <%= f.number_field :edad, autofocus: true, class: "form-control",placeholder: "Edad" %>
      </div>
   </div>
-
+  </div>
+<div class="col-md-6">
   <div class="form-group">
       <div class="input-group-lg">
   
     <%= f.number_field :sexo, autofocus: true, class: "form-control",placeholder: "Sexo" %>
    </div>
   </div>
-
+  </div>
+</div>
+<div class="row">
+<div class="col-md-6">
    <div class="form-group">
       <div class="input-group-lg">
   
     <%= f.date_select :hora, autofocus: true, class: "form-control",placeholder: "Hora" %>
    </div>
   </div>
+  </div>
+  <div class="col-md-6">
      <div class="form-group">
       <div class="input-group-lg">
   
     <%= f.number_field :rutaid, autofocus: true, class: "form-control",placeholder: "Ruta" %>
    </div>
+  </div>
+  </div>
   </div>
   <div class="form-group">
       <div class="input-group-lg">
@@ -74,4 +86,6 @@
     <%= f.submit %>
   </div>
 <% end %>
+  </div>
 
+    </div>
