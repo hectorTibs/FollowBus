@@ -28,17 +28,19 @@ class ReportesController < ApplicationController
   def create
     @reporte = Reporte.new(reporte_params)
 
-    respond_to do |format|
+    #respond_to do |format|
       if @reporte.save
   #     format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
-       format.html { render :action => "index", :controller=>"controller", params: { blog_id: @reporte.id }}
+      # format.html { render "posts/new", params: { blog_id: @reporte.id }}
     
-        format.json { render :show, status: :created, location: @reporte }
-      else
+       # format.json { render :show, status: :created, location: @reporte }
+       redirect_to :controller => 'posts', :action => 'new',params: { reporte_id: @reporte }
+      
+           else
         format.html { render :new }
         format.json { render json: @reporte.errors, status: :unprocessable_entity }
       end
-    end
+   # end
   end
 
   # PATCH/PUT /reportes/1

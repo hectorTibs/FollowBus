@@ -1,4 +1,51 @@
-<%= form_for(post) do |f| %>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '733224400184471',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+      FB.ui(
+ {
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/'
+}, function(response){});
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <h1>¿Deseas dar a conocer tu suceso a la comunidad?</h1>
+<h3>Arroba a las personas o autoridades para
+                compartirles tu suceso.</h3>
+                <%= params['reporte_id']%>
+  </div>
+
+         
+    </div>
+    <br>
+    <div class="row" style="background-image: url('/assets/MapBackground-4614ee0e5770e376ec6430f58b3290f663773baf688e6d91e67393ab0b02d3c6.png')";>
+<br>
+  
+    <div class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <input type="text" placeholder="Busqueda" name="name"  class="form-control">
+        <span class="input-group-addon glyphicon glyphicon-search"></span>
+      </div>
+    </div>
+  <br>
+    <div class="col-md-6 col-md-offset-3">
+   
+  <%= form_for(post) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,23 +57,136 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :reporteid, :value => params['reporte_id']%>
+ <!-- <div class="row">
+    <div class="col-md-12">
+       <div class="form-group">
+      <div class="input-group-lg">
+ 
+      <%= f.text_field :reporteid, autofocus: true, class: "form-control",placeholder: "reporteid",:value => params['reporte_id']  %>
+   
+    </div>
+  </div>
+    </div>
+  </div>
+   -->
 
-  <div class="field">
-    <%= f.label :reporteid %>
-    <%= f.number_field :reporteid %>
+<!--<div class="row">
+
+<div class="col-md-6">
+  <div class="form-group">
+      <div class="input-group-lg">
+  
+    <%= f.number_field :redsocial, autofocus: true, class: "form-control",placeholder: "redsocial" %>
+   </div>
+  </div>
+  </div>
+</div>
+-->
+
+    <div class= "row">
+      <div class="col-md-12">
+        <div class="Tweets">
+          <div class="row">
+            <div class="col-md-3">
+              <h5>@TransitoMTY</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@TransitoSanNico</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@Politran</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@FuerzaCivil</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <h5>@PoliciaRegia</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@AlcaldeMTY</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@AlcaldeSanNico</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@Ruta229</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <h5>@Ruta1</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@AlcaldeApodaca</h5>
+            </div>
+            <div class="col-md-3">
+              <h5>@SecretariaDelTransporte</h5>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :comentario %>
-    <%= f.text_field :comentario %>
-  </div>
+<br>
+  <div class="form-group">
+      <div class="input-group-lg">
 
-  <div class="field">
-    <%= f.label :redsocial %>
-    <%= f.text_field :redsocial %>
+    <%= f.text_area :comentario, autofocus: true, class: "form-control",placeholder: "comentario",rows:"6" %>
+   </div>
   </div>
-
-  <div class="actions">
+  <!--<div class="actions">
     <%= f.submit %>
-  </div>
+  </div>-->
+      <div class="row">
+      <div class="col-md-10 col-md-offset-2">
+        
+      
+        <div class="col-md-2">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input  class="Cancelar" value="F">
+          
+        </div>
+        <div class="col-md-2">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input  class="Cancelar" value="T">
+          
+        </div>
+        <div class="col-md-2">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input  class="Cancelar" value="Y">
+          
+        </div>
+        <div class="col-md-2">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input  class="Cancelar" value="G">
+          
+        </div>
+        <div class="col-md-2">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input  class="Cancelar" value="I">
+
+          
+        </div>
+       </div>
+      </div>
+    <div class="row">
+        <div class="col-md-6">
+       <!-- <button class="Siguiente">Siguiente paso</button>-->
+        <input type="submit" class="Cancelar" value="Saltar Paso">
+          
+        </div>
+        <div class="col-md-6">
+        <button type="button" class="btn Siguiente btn-lg disabled">Compartir</button>
+      <!-- <input type="submit" class="Siguiente" value="Compartir" disabled="disabled">-->
+           <!--<button class="Cancelar">Cancelar</button>-->
+        </div>
+      </div>
 <% end %>
+  </div>
+  </div>
+
+    </div>
+
