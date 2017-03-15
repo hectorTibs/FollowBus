@@ -15,16 +15,38 @@ function myFacebookLogin() {
   // Note: The call will only work if you accept the permission request
   FB.api('/me/feed', 'post', {message: 'Hello, world!'});
 }, {scope: 'publish_actions'});*/
-FB.ui({
+/*FB.ui({
   method: 'share_open_graph',
   action_type: 'og.likes',
   action_properties: JSON.stringify({
-    object:' sdfsd sd fsd sdf ds fsdf sfsd sdf sdf sdf sdfsdfsdfs  sdf sd sdf sdf sd',
+    object:'https://developers.facebook.com/docs/',
   })
 }, function(response){
   // Debug response (optional)
   console.log(response);
-})
+})*/
+/*FB.ui(
+  {
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  },
+  // callback
+  function(response) {
+    if (response && !response.error_message) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);*/
+var body = 'Reading JS SDK documentation';
+FB.api('/me/feed', 'post', { message: body }, function(response) {
+  if (!response || response.error) {
+    alert('Error occured');
+  } else {
+    alert('Post ID: ' + response.id);
+  }
+});
 }
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
