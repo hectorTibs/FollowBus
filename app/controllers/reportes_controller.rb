@@ -31,7 +31,7 @@ class ReportesController < ApplicationController
     respond_to do |format|
       if @reporte.save
   #     format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
-       format.html { render controller:"posts",action: "new"}
+       format.html { render action: "/posts/new"}
     
         format.json { render :compartir, status: :created, location: @reporte }
       else
