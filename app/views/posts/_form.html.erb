@@ -39,14 +39,18 @@ function myFacebookLogin() {
     }
   }
 );*/
-var body = 'Reading JS SDK documentation';
+FB.login(function(){
+  // Note: The call will only work if you accept the permission request
+  var body = 'Reading JS SDK documentation';
 FB.api('/me/feed', 'post', { message: body }, function(response) {
   if (!response || response.error) {
-    alert(response.error);
+    alert('error ');
   } else {
     alert('Post ID: ' + response.id);
   }
 });
+}, {scope: 'publish_actions'});
+
 }
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
