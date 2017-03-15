@@ -31,7 +31,7 @@ class ReportesController < ApplicationController
     respond_to do |format|
       if @reporte.save
   #     format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
-       format.html { render "posts/new", params: { blog_id: @reporte.id }}
+       format.html { render :action => "index", :controller=>"controller", params: { blog_id: @reporte.id }}
     
         format.json { render :show, status: :created, location: @reporte }
       else
