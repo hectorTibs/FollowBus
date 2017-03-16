@@ -12,8 +12,7 @@ class PostsController < ApplicationController
   def show
   end
   # GET /posts/done
-   def done
-  end
+ 
 
   # GET /posts/new
   def new
@@ -31,10 +30,9 @@ class PostsController < ApplicationController
 
    # respond_to do |format|
       if @post.save
-       #format.html { render "done", notice: 'Post was successfully created.' }
-        #format.json { render :done, status: :created, location: @post }
+     #  format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      #  format.json { render :show, status: :created, location: @post }
            ##redirect_to :action => 'done'
-           redirect_to :controller => 'posts', :action => 'done',params: { reporte_id: @reporte }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
