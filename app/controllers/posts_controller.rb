@@ -31,9 +31,10 @@ class PostsController < ApplicationController
 
    # respond_to do |format|
       if @post.save
-       format.html { render "done", notice: 'Post was successfully created.' }
-        format.json { render :done, status: :created, location: @post }
+       #format.html { render "done", notice: 'Post was successfully created.' }
+        #format.json { render :done, status: :created, location: @post }
            ##redirect_to :action => 'done'
+           redirect_to :controller => 'posts', :action => 'done',params: { reporte_id: @reporte }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
