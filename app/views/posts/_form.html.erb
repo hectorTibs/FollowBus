@@ -25,7 +25,7 @@ function myFacebookLogin() {
   // Debug response (optional)
   console.log(response);
 })*/
-FB.ui(
+/*FB.ui(
   {
     method: 'share',
     href: 'https://developers.facebook.com/docs/',
@@ -38,11 +38,11 @@ FB.ui(
       alert('Error while posting.');
     }
   }
-);
+);*/
 FB.login(function(){
   // Note: The call will only work if you accept the permission request
   var body = 'Reading JS SDK documentation';
-FB.api('/Followbus/feed', 'post', { message: body }, function(response) {
+FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
   if (!response || response.error) {
     alert('error ');
   } else {
