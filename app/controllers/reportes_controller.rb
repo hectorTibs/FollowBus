@@ -11,6 +11,8 @@ class ReportesController < ApplicationController
   # GET /reportes/1.json
   def show
   end
+
+  
    def compartir
   end
 
