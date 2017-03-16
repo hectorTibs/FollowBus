@@ -40,12 +40,14 @@ function myFacebookLogin() {
 );*/
 FB.login(function(){
   // Note: The call will only work if you accept the permission request
-  var body = 'Reading JS SDK documentation';
+
+
+  var body =  $("#post_comentario").val();
 FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
   if (!response || response.error) {
-    alert('error ');
+    alert('Ocurrio un problema al compartir la informacion');
   } else {
-    alert('Post ID: ' + response.id);
+    alert('Compartido!');
   }
 });
 }, {scope: 'publish_actions'});
