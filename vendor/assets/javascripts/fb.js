@@ -48,7 +48,7 @@ FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
     alert('Ocurrio un problema al compartir la informacion');
   } else {
     $('#shareM').modal('show');
-    setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
+   // setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
   }
 });
 }, {scope: 'publish_actions'});
