@@ -52,8 +52,14 @@
 <div class="col-md-6">
   <div class="form-group">
       <div class="input-group-lg">
-  
-    <%= f.number_field :sexo, autofocus: true, class: "form-control",placeholder: "Sexo" %>
+  <select name="reporte[sexo]" id="reporte_sexo" class="form-control">
+  <option value="" selected="selected">Seleccione...</option>
+  <option value="1">Masculino</option>
+  <option value="2" >Femenino</option>
+ 
+</select>
+
+   <!-- <%= f.number_field :sexo, autofocus: true, class: "form-control",placeholder: "Sexo" %>-->
    </div>
   </div>
   </div>
@@ -70,8 +76,9 @@
   <div class="col-md-6">
      <div class="form-group">
       <div class="input-group-lg">
-  
-    <%= f.number_field :rutaid, autofocus: true, class: "form-control",placeholder: "Ruta" %>
+  <%= collection_select(:reporte, :rutaid, Camione.all, :id, :nombre, 
+                 {:prompt => 'Seleccione...'}, {:class => 'form-control'}) %>
+   <!-- <%= f.number_field :rutaid, autofocus: true, class: "form-control",placeholder: "Ruta" %>-->
    </div>
   </div>
   </div>
