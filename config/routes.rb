@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'maps/index'
   get 'reportes/index'
    get 'reportes/compartir'
+   get 'posts/done'
 
   resources :incidencia
   resources :ruta
