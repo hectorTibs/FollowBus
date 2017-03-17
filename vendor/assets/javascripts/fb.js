@@ -58,7 +58,7 @@ FB.api(
     {
         "message": "This is a test message",
         "place": "link",
-        "tags": "10153283482166868,10153283482166868"
+        "tags": "10153283482166868,1720852638142672"
     },
     function (response) {
       if (response && !response.error) {
