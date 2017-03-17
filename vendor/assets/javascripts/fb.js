@@ -71,7 +71,7 @@ var params = {};
 params['message'] = 'Message';
 params['name'] = 'Name';
 params['description'] = 'Description';
-params['place'] = '733224400184471';
+params['tags'] = '733224400184471';
 params['picture'] = 'http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg';
 params['caption'] = 'Caption';
   
