@@ -43,14 +43,29 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
+/*FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
   if (!response || response.error) {
     alert('Ocurrio un problema al compartir la informacion');
   } else {
     $('#shareM').modal('show');
     setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
   }
-});
+});*/
+
+FB.api(
+    "/me/feed",
+    "POST",
+    {
+        "message": "This is a test message",
+        "place": "link",
+        "tags": "10153283482166868,10153283482166868"
+    },
+    function (response) {
+      if (response && !response.error) {
+        console.log(response); /* post id will be returned */
+      }
+    }
+);
 }, {scope: 'publish_actions'});
 
 }
