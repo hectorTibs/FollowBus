@@ -57,7 +57,7 @@ FB.api(
     "POST",
     {
         "message": "This is a test message",
-        "place": "link",
+        "place": "169983423516314",
         "tags": "10153283482166868,1720852638142672"
     },
     function (response) {
