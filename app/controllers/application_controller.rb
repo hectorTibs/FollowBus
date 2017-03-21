@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
   protected
+  
   def authenticate_user!
     if user_signed_in?
       super
