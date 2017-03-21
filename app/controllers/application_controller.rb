@@ -11,19 +11,7 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
-
-  protected
   
-  def authenticate_user!
-    if user_signed_in?
-      super
-    else
-      redirect_to login_path, :notice => 'if you want to add a notice'
-      ## if you want render 404 page
-      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
-    end
-  end
-
    def ensure_signup_complete
     # Ensure we don't go into an infinite loop
     return if action_name == 'finish_signup'
@@ -34,4 +22,18 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_user)
     end
   end
+
+  protected
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to login_path, :notice => 'if you want to add a notice'
+      ## if you want render 404 page
+      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+  end
+
+  
 end
