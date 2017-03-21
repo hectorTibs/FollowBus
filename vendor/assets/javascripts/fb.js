@@ -43,7 +43,7 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAMnabnj9bD2VFG6OX2goAfyDuIRuGCKNaJZAqgijLV4dMDiH5KOgDAZCTOw0VfbaldVdFZB749WKrGfhj8yZADSpPGWvHqhFZBZBdQDzAVQh4gBgM7ZAs71G9bRPFDHCnFkmn8LA6TCr0VevfDfXhZCBO5xE85HF2HZBqdv3sJWgS', 'post',{
+FB.api('/followbusMx/feed?access_token=EAACEdEose0cBAFaWRvDcLskye4yxmjeote2TdZAeVtDZClXjxZBk6JU8ZCM54XvWBTRP7smNYu3kb5bNs1w1hbMvbFQC3IbTHIzZBo2F4OXKTSz5XggexrDkEOxadLq4Dx4MwTNtUWQHufsJZBJbGnZBwa6mbqMtL1NC6uZC5fbIwZCPZCrg9Kd4v3', 'post',{
         "message": body,
         //"place": "1720852638142672",
   
