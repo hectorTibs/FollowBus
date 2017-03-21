@@ -22,7 +22,7 @@ devise_scope :user do
 end
 
 get '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
-
+#match "/posts", to: "posts#new", :via => 'get'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
