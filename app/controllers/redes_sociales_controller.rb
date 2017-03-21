@@ -1,4 +1,5 @@
 class RedesSocialesController < ApplicationController
+    before_filter :authenticate_user!
   before_action :set_redes_sociale, only: [:show, :edit, :update, :destroy]
 
   # GET /redes_sociales

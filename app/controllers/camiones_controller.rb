@@ -1,4 +1,5 @@
 class CamionesController < ApplicationController
+    before_filter :authenticate_user!
   before_action :set_camione, only: [:show, :edit, :update, :destroy]
 
   # GET /camiones

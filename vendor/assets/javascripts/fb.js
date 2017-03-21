@@ -43,23 +43,36 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-/*FB.api('/followbusMx/feed', 'post', { message: body }, function(response) {
+FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAMnabnj9bD2VFG6OX2goAfyDuIRuGCKNaJZAqgijLV4dMDiH5KOgDAZCTOw0VfbaldVdFZB749WKrGfhj8yZADSpPGWvHqhFZBZBdQDzAVQh4gBgM7ZAs71G9bRPFDHCnFkmn8LA6TCr0VevfDfXhZCBO5xE85HF2HZBqdv3sJWgS', 'post',{
+        "message": body,
+        //"place": "1720852638142672",
+  
+        "tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
+       // "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg",
+        "privacy":{"value":"SELF"}
+     //  "privacy":{"value":"CUSTOM","allow":"1720852638142672"}
+      
+    }, function(response) {
   if (!response || response.error) {
     alert('Ocurrio un problema al compartir la informacion');
   } else {
     $('#shareM').modal('show');
     setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
   }
-});*/
+});
 
 /*FB.api(
-    "/me/feed",
+    "/me/feed?access_token=EAAKa3Rvp5JcBAMnabnj9bD2VFG6OX2goAfyDuIRuGCKNaJZAqgijLV4dMDiH5KOgDAZCTOw0VfbaldVdFZB749WKrGfhj8yZADSpPGWvHqhFZBZBdQDzAVQh4gBgM7ZAs71G9bRPFDHCnFkmn8LA6TCr0VevfDfXhZCBO5xE85HF2HZBqdv3sJWgS",
     "POST",
     {
-        "message": "This is a test message",
-        "place": "169983423516314",
-        "tags": "10153283482166868,1720852638142672",
-        "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg"
+        "message": "This is a test message Test message tag!",
+        //"place": "1720852638142672",
+  
+        "tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
+       // "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg",
+        "privacy":{"value":"SELF"}
+     //  "privacy":{"value":"CUSTOM","allow":"1720852638142672"}
+      
     },
     function (response) {
       if (response && !response.error) {
@@ -67,12 +80,13 @@ FB.login(function(){
       }
     }
 );*/
-var params = {};
+/*var params = {};
 params['message'] = 'Message';
 params['name'] = 'Name';
 params['description'] = 'Description';
 params['tags'] = '733224400184471';
 params['caption'] = 'Caption';
+params['privacy'] = "{'SELF'}";
   
 FB.api('/me/feed', 'post', params, function(response) {
   if (!response || response.error) {
@@ -81,7 +95,7 @@ FB.api('/me/feed', 'post', params, function(response) {
     alert('Published to stream - you might want to delete it now!');
   }
 });
-
+*/
 }, {scope: 'publish_actions'});
 
 }
