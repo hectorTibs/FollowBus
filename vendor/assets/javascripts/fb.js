@@ -7,7 +7,7 @@ function myFacebookLogin() {
         // a PHP script that grabs the signed request from the cookie.
 
           var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token=EAACEdEose0cBAFaWRvDcLskye4yxmjeote2TdZAeVtDZClXjxZBk6JU8ZCM54XvWBTRP7smNYu3kb5bNs1w1hbMvbFQC3IbTHIzZBo2F4OXKTSz5XggexrDkEOxadLq4Dx4MwTNtUWQHufsJZBJbGnZBwa6mbqMtL1NC6uZC5fbIwZCPZCrg9Kd4v3', 'post',{
+FB.api('/followbusMx/feed?access_token=EAACEdEose0cBALhjwtyHZAomFwwHBa1KZBNu5xuYcyU2uUvWlIDdmeV5UcvruxpfSvSYTNmLMsEQeabqxwz9u5AGSKB1f2kmZBVagHh52iCy65BcKJ31QldzKttAGofMZBsrunSjPZCY8vkDXc0Ks7NUZAIImdEj0AqVTQgNMaCjSNN0LlYA', 'post',{
         "message": body,
         //"place": "1720852638142672",
   
