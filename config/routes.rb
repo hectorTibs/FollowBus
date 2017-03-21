@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'reportes/index'
    get 'reportes/compartir'
    
- get 'posts/index'
+ #get 'posts/index'
   resources :incidencia
   resources :ruta
   resources :redes_sociales
