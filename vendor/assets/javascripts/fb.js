@@ -5,9 +5,9 @@
       version:  'v2.8'
     });
      FB.AppEvents.logPageView();
-  };
-  
-function myFacebookLogin() {
+
+
+     function myFacebookLogin() {
     FB.login(function(response) {
       if (response.authResponse) {
         alert('You are logged in &amp; cookie set!');
@@ -39,6 +39,9 @@ FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAJs0RqZBQGbdy9y90tXWpKy5B7ZA
    // return false;
 
 }
+  };
+  
+
 
 
   (function(d, s, id){
