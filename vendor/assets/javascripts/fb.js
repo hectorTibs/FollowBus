@@ -40,6 +40,6 @@ FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAJs0RqZBQGbdy9y90tXWpKy5B7ZA
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "http://connect.facebook.net/en_US/sdk.js";
+     js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
