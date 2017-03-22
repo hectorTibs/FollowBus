@@ -1,4 +1,12 @@
-
+ window.fbAsyncInit = function() {
+    FB.init({
+      appId: '733224400184471',
+      cookie: true, // This is important, it's not enabled by default
+      version:  'v2.8'
+    });
+     FB.AppEvents.logPageView();
+  };
+  
 function myFacebookLogin() {
     FB.login(function(response) {
       if (response.authResponse) {
@@ -28,18 +36,11 @@ FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAJs0RqZBQGbdy9y90tXWpKy5B7ZA
         alert('User cancelled login or did not fully authorize.');
       }
     }, {scope: 'publish_actions'});
-    return false;
+   // return false;
 
 }
 
- window.fbAsyncInit = function() {
-    FB.init({
-      appId: '733224400184471',
-      cookie: true, // This is important, it's not enabled by default
-      version:  'v2.8'
-    });
-     FB.AppEvents.logPageView();
-  };
+
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
