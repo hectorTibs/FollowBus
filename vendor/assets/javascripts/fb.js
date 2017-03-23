@@ -22,11 +22,13 @@
   }
   else {
     FB.login();
+
+    alert("no login")
   }
 });
   };
 
-  
+
 function myFacebookLogin() {
 
 FB.login(function(){
