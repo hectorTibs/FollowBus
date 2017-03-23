@@ -1,4 +1,6 @@
- window.fbAsyncInit = function() {
+ $( document ).ready(function() {
+    console.log( "ready!" );
+     window.fbAsyncInit = function() {
     FB.init({
       appId      : '733224400184471',
       xfbml      : true,
@@ -43,3 +45,27 @@ FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAF9EjHIAQGfSpZCLXnZCZBroKtBM
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+  /*Facebook Login status*/
+
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') 
+   {
+    console.log('Logged in.');
+    $('#fb-I').css( "display", "none" );
+    $('#fb-E').css( "display", "block" );
+
+    $('#fb-E').click(function(){
+
+      myFacebookLogin();
+    });
+   
+  }
+  else {
+    FB.login();
+  }
+});
+
+
+});
+
