@@ -1,4 +1,15 @@
 
+$( document ).ready(function() {
+    console.log( "ready!" );
+    $('#fb-I').css( "display", "none" );
+    $('#fb-E').css( "display", "inline" );
+
+    $('#fb-E').click(function(){
+
+      myFacebookLogin();
+    });
+});
+
 
      window.fbAsyncInit = function() {
     FB.init({
@@ -7,6 +18,7 @@
       version    : 'v2.8'
     });
     FB.AppEvents.logPageView();
+
       FB.getLoginStatus(function(response) {
   if (response.status === 'connected') 
    {
