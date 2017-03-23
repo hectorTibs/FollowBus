@@ -1,5 +1,5 @@
- $( document ).ready(function() {
-    console.log( "ready!" );
+
+
      window.fbAsyncInit = function() {
     FB.init({
       appId      : '733224400184471',
@@ -67,5 +67,5 @@ FB.getLoginStatus(function(response) {
 });
 
 
-});
+
 
