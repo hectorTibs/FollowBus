@@ -12,7 +12,7 @@
    {
     console.log('Logged in.');
     $('#fb-I').css( "display", "none" );
-    $('#fb-E').css( "display", "block" );
+    $('#fb-E').css( "display", "inline" );
 
     $('#fb-E').click(function(){
 
@@ -21,7 +21,7 @@
    
   }
   else {
-    FB.login();
+//    FB.login();
 
     alert("no login")
   }
