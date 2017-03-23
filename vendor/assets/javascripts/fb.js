@@ -7,9 +7,7 @@
       version    : 'v2.8'
     });
     FB.AppEvents.logPageView();
-      
-  };
-FB.getLoginStatus(function(response) {
+      FB.getLoginStatus(function(response) {
   if (response.status === 'connected') 
    {
     console.log('Logged in.');
@@ -26,6 +24,8 @@ FB.getLoginStatus(function(response) {
     FB.login();
   }
 });
+  };
+
   
 function myFacebookLogin() {
 
