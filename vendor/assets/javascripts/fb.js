@@ -14,13 +14,13 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAJs0RqZBQGbdy9y90tXWpKy5B7ZAL8thbP4jiWUirkLx68hDJzLYv70DB45kaUmHkwe4GjxIdZCDuToyUWSa1XZAXb5RgzUnHYpTSMVKaqVkZA7Tv3Ip4ADLD0ZCPRQODEfu8d4NStaAbSV9B3PeW9O91EMU1O6d8T0LuUchsB', 'post',{
+FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAF9EjHIAQGfSpZCLXnZCZBroKtBM9EyimADuQvyUrzOgKYHpyClruPlswSTrf0hPTMr01ZB11NFb9U3qT0gREw7KxaIl5DHBPDi18QoU9H78E36BhFMAK1Nm3xuCq0Mmfdo6BRYX9qqmBOVdHTUTmcpdu8zWm4ZBSsXyBzfZAm', 'post',{
         "message": body,
         //"place": "1720852638142672",
   
         "tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
        // "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg",
-        "privacy":{"value":"SELF"}
+      //  "privacy":{"value":"SELF"}
      //  "privacy":{"value":"CUSTOM","allow":"1720852638142672"}
       
     }, function(response) {
