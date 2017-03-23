@@ -9,6 +9,24 @@
     FB.AppEvents.logPageView();
       
   };
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') 
+   {
+    console.log('Logged in.');
+    $('#fb-I').css( "display", "none" );
+    $('#fb-E').css( "display", "block" );
+
+    $('#fb-E').click(function(){
+
+      myFacebookLogin();
+    });
+   
+  }
+  else {
+    FB.login();
+  }
+});
+  
 function myFacebookLogin() {
 
 FB.login(function(){
@@ -48,23 +66,7 @@ FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAF9EjHIAQGfSpZCLXnZCZBroKtBM
 
   /*Facebook Login status*/
 
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') 
-   {
-    console.log('Logged in.');
-    $('#fb-I').css( "display", "none" );
-    $('#fb-E').css( "display", "block" );
 
-    $('#fb-E').click(function(){
-
-      myFacebookLogin();
-    });
-   
-  }
-  else {
-    FB.login();
-  }
-});
 
 
 
