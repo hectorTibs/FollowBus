@@ -38,7 +38,7 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAF4aTeNpBrg7ZBYczH2nTMsMyiLayDspGrEhrxKtfONy6txw3BmttPEk1dqS8QWtxtiCyuOQ6wuCfOSeHkwICS3e6mrHLqi1eCKJUwh2bqqX6QYSvzmJj3mYGnAgYtCBN9UDhK4tNOQTS0EEqNsga51ufvBLH5GOxbnC4', 'post',{
+FB.api('/followbusMx/feed?access_token=733224400184471|DO-TevuLMPwfB43_7ZNNggW9y7A', 'post',{
         "message": body,
         //"place": "1720852638142672",
   
