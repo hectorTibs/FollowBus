@@ -8,10 +8,6 @@
       version    : 'v2.8'
     });
     FB.AppEvents.logPageView();
-    FB.api("/me",
-                function (response) {
-                    alert('Name is ' + response.name);
-                });
 
       FB.getLoginStatus(function(response) {
   if (response.status === 'connected') 
@@ -24,7 +20,11 @@
 
       myFacebookLogin();
     });
-   
+     FB.api("/me?access_token=EAAKa3Rvp5JcBADP6zlhkDu7wgYPEg6sM6bZA6JtINV0l4DnnZAnhKZBMlloOsym5mjE1RhImGHRcfWoy0ilODCIDiiPMv1QoBzKuFteFVhCnZAaEymLPLrLmaiqNjuABgYrwd5Oulfpx1UKiBFBWEOKmj7edo5kgrhmOoMZAFb2BWuBlCQaPU",
+                function (response) {
+                    alert('Name is ' + response.name);
+                });
+
   }
   else {
 //    FB.login();
