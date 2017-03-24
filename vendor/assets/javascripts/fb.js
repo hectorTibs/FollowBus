@@ -8,6 +8,10 @@
       version    : 'v2.8'
     });
     FB.AppEvents.logPageView();
+    FB.api("/me",
+                function (response) {
+                    alert('Name is ' + response.name);
+                });
 
       FB.getLoginStatus(function(response) {
   if (response.status === 'connected') 
@@ -38,7 +42,7 @@ FB.login(function(){
 
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBAPPDZA6fdQR4uNahkrvIzBZCNCiMPbv58TkSKny4NIDK9zmWP2cYl2cXkN5ZBRoXx20h6BBHwvoZB4xS6szRSi3X4NELGpgXB6ZCCh8jDwv7OQjOEO9Ri30gGOfb44nogLG25YsX6ZBRVcgp0gAZBkseZAioDn1pyWSff4mea2WL', 'post',{
+FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBADP6zlhkDu7wgYPEg6sM6bZA6JtINV0l4DnnZAnhKZBMlloOsym5mjE1RhImGHRcfWoy0ilODCIDiiPMv1QoBzKuFteFVhCnZAaEymLPLrLmaiqNjuABgYrwd5Oulfpx1UKiBFBWEOKmj7edo5kgrhmOoMZAFb2BWuBlCQaPU', 'post',{
         "message": body,
         //"place": "1720852638142672",
   
