@@ -12,7 +12,7 @@
       FB.getLoginStatus(function(response) {
   if (response.status === 'connected') 
    {
-    console.log('Logged in.');
+   
    $('.fb-I').attr( "src", "/assets/Face_activo-f6770488e3cace3a8010291d39ee76dedf482bd4f857f88d78e912a1365d1899.svg" );
     
 
@@ -25,7 +25,7 @@
   else {
 //    FB.login();
  $('.fb-I').attr( "src", "/assets/Face_inactivo-0df2b9e69490433510d4b1274435e076523c676e28ab15140fb810f326b27ef0.svg" );
-    alert("no login")
+   
   }
 });
   };
