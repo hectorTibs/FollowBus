@@ -53,7 +53,7 @@ FB.login(function(response){
    }
 
   var body =  $("#post_comentario").val();
-/*FB.api('/followbusMx/feed?access_token=EAAKa3Rvp5JcBADP6zlhkDu7wgYPEg6sM6bZA6JtINV0l4DnnZAnhKZBMlloOsym5mjE1RhImGHRcfWoy0ilODCIDiiPMv1QoBzKuFteFVhCnZAaEymLPLrLmaiqNjuABgYrwd5Oulfpx1UKiBFBWEOKmj7edo5kgrhmOoMZAFb2BWuBlCQaPU', 'post',{
+FB.api('/followbusMx/feed?access_token='+access_token, 'post',{
         "message": body,
         //"place": "1720852638142672",
   
@@ -70,7 +70,7 @@ FB.login(function(response){
     setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
   }
 });
-*/
+
 
 }, {scope: 'publish_actions'});
 
