@@ -40,7 +40,7 @@
 
 function myFacebookLogin() {
 
-FB.login(function(){
+FB.login(function(response){
   // Note: The call will only work if you accept the permission request
   if (response.authResponse) {
      var access_token =   FB.getAuthResponse()['accessToken'];
