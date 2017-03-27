@@ -19,6 +19,7 @@
 //= require underscore
 //= require gmaps/google
 //= require fb
+//= require jquery-ui
 
 $(document).ready(function () {
 
