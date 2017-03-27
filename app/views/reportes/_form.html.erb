@@ -16,7 +16,7 @@
    
     <%= form_for(reporte) do |f| %>
   
-    <%= hidden_field_tag :userid, current_user.id %>
+    <%= hidden_field_tag :reporte_userid, current_user.id %>
   <% if reporte.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
@@ -34,7 +34,7 @@
       <div class="input-group-lg">
  
       <%= f.text_field :nombre, autofocus: true, class: "form-control",placeholder: "Nombre"  %>
-   
+   <%= f.text_field :userid, autofocus: true, class: "form-control",placeholder: "userid"  %>
     </div>
   </div>
     </div>
