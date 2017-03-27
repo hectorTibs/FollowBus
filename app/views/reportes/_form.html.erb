@@ -1,21 +1,4 @@
-
-    <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-      <h1>Compartenos tu experiencia</h1>
-<h3>Para compartir tu experiencia sobre el servicio
-        -bueno o malo- que prestan las rutas urbanas
-        y sus operadores es necesario expliques de
-        forma detallada el suceso.</h3>
-  </div>
-
-         
-    </div>
-    <br>
-    <div class="row" style="background-image: url('/assets/MapBackground-4614ee0e5770e376ec6430f58b3290f663773baf688e6d91e67393ab0b02d3c6.png')";>
-<br>
-    <div class="col-md-6 col-md-offset-3">
-   
-    <%= form_for(reporte) do |f| %>
+<%= form_for(reporte) do |f| %>
   <% if reporte.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
@@ -27,83 +10,43 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <div class="col-md-12">
-       <div class="form-group">
-      <div class="input-group-lg">
- 
-      <%= f.text_field :nombre, autofocus: true, class: "form-control",placeholder: "Nombre"  %>
-   
-    </div>
-  </div>
-    </div>
-  </div>
-   
 
-<div class="row">
-<div class="col-md-6">
- <div class="form-group">
-      <div class="input-group-lg">
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
 
-    <%= f.number_field :edad, autofocus: true, class: "form-control",placeholder: "Edad" %>
-     </div>
+  <div class="field">
+    <%= f.label :edad %>
+    <%= f.text_field :edad %>
   </div>
-  </div>
-<div class="col-md-6">
-  <div class="form-group">
-      <div class="input-group-lg">
-  <select name="reporte[sexo]" id="reporte_sexo" class="form-control">
-  <option value="" selected="selected">Seleccione...</option>
-  <option value="1">Masculino</option>
-  <option value="2" >Femenino</option>
- 
-</select>
 
-   <!-- <%= f.number_field :sexo, autofocus: true, class: "form-control",placeholder: "Sexo" %>-->
-   </div>
+  <div class="field">
+    <%= f.label :sexo %>
+    <%= f.text_field :sexo %>
   </div>
-  </div>
-</div>
-<div class="row">
-<div class="col-md-6">
-   <div class="form-group">
-      <div class="input-group-lg">
-  
-    <%= f.text_field :hora, autofocus: true, class: "form-control",placeholder: "Hora" %>
-   </div>
-  </div>
-  </div>
-  <div class="col-md-6">
-     <div class="form-group">
-      <div class="input-group-lg">
-  <%= collection_select(:reporte, :rutaid, Camione.all, :id, :nombre, 
-                 {:prompt => 'Seleccione...'}, {:class => 'form-control'}) %>
-   <!-- <%= f.number_field :rutaid, autofocus: true, class: "form-control",placeholder: "Ruta" %>-->
-   </div>
-  </div>
-  </div>
-  </div>
-  <div class="form-group">
-      <div class="input-group-lg">
 
-    <%= f.text_area :descripcion, autofocus: true, class: "form-control",placeholder: "Descripcion",rows:"6" %>
-   </div>
+  <div class="field">
+    <%= f.label :hora %>
+    <%= f.date_select :hora %>
   </div>
-  <!--<div class="actions">
+
+  <div class="field">
+    <%= f.label :rutaid %>
+    <%= f.text_field :rutaid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :userid %>
+    <%= f.text_field :userid %>
+  </div>
+
+  <div class="actions">
     <%= f.submit %>
-  </div>-->
-    <div class="row">
-        <div class="col-md-6">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-        <input type="submit" class="Cancelar" value="Cancelar">
-          
-        </div>
-        <div class="col-md-6">
-       <input type="submit" class="Siguiente" value="Siguiente paso">
-           <!--<button class="Cancelar">Cancelar</button>-->
-        </div>
-      </div>
-<% end %>
   </div>
-
-    </div>
+<% end %>

@@ -11,6 +11,7 @@
       <th>Hora</th>
       <th>Rutaid</th>
       <th>Descripcion</th>
+      <th>Userid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= reporte.hora %></td>
         <td><%= reporte.rutaid %></td>
         <td><%= reporte.descripcion %></td>
+        <td><%= reporte.userid %></td>
         <td><%= link_to 'Show', reporte %></td>
         <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
         <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>

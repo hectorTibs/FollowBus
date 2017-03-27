@@ -17,7 +17,7 @@ class ReportesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reporte" do
     assert_difference('Reporte.count') do
-      post reportes_url, params: { reporte: { descripcion: @reporte.descripcion, edad: @reporte.edad, hora: @reporte.hora, nombre: @reporte.nombre, rutaid: @reporte.rutaid, sexo: @reporte.sexo } }
+      post reportes_url, params: { reporte: { descripcion: @reporte.descripcion, edad: @reporte.edad, hora: @reporte.hora, nombre: @reporte.nombre, rutaid: @reporte.rutaid, sexo: @reporte.sexo, userid: @reporte.userid } }
     end
 
     assert_redirected_to reporte_url(Reporte.last)
@@ -34,7 +34,7 @@ class ReportesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reporte" do
-    patch reporte_url(@reporte), params: { reporte: { descripcion: @reporte.descripcion, edad: @reporte.edad, hora: @reporte.hora, nombre: @reporte.nombre, rutaid: @reporte.rutaid, sexo: @reporte.sexo } }
+    patch reporte_url(@reporte), params: { reporte: { descripcion: @reporte.descripcion, edad: @reporte.edad, hora: @reporte.hora, nombre: @reporte.nombre, rutaid: @reporte.rutaid, sexo: @reporte.sexo, userid: @reporte.userid } }
     assert_redirected_to reporte_url(@reporte)
   end
 

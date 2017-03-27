@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre test:</strong>
+  <strong>Nombre:</strong>
   <%= @reporte.nombre %>
 </p>
 
@@ -28,6 +28,11 @@
 <p>
   <strong>Descripcion:</strong>
   <%= @reporte.descripcion %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @reporte.userid %>
 </p>
 
 <%= link_to 'Edit', edit_reporte_path(@reporte) %> |
