@@ -183,7 +183,7 @@
       stop: function() {
         var result = $( "#select-result" ).empty();
         $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable img" ).attr("imgselect");
+          var index = $( "#selectable img" ).attr("data-imgselect");
           result.append( " #" + ( index  ) );
         });
       }
