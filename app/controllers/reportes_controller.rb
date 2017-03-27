@@ -1,7 +1,6 @@
 class ReportesController < ApplicationController
-      before_filter :authenticate_user!
+     before_filter :authenticate_user!
   before_action :set_reporte, only: [:show, :edit, :update, :destroy,:compartir]
-
   # GET /reportes
   # GET /reportes.json
   def index
@@ -12,8 +11,11 @@ class ReportesController < ApplicationController
   # GET /reportes/1.json
   def show
   end
- def compartir
+
+   def compartir
   end
+
+
   # GET /reportes/new
   def new
     @reporte = Reporte.new
@@ -26,7 +28,7 @@ class ReportesController < ApplicationController
   # POST /reportes
   # POST /reportes.json
   def create
-     @reporte = Reporte.new(reporte_params)
+    @reporte = Reporte.new(reporte_params)
 
     #respond_to do |format|
       if @reporte.save

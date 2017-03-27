@@ -2,18 +2,18 @@
 
 one:
   nombre: MyString
-  edad: 
-  sexo: 
+  edad: 1
+  sexo: 1
   hora: 2017-03-27
-  rutaid: 
+  rutaid: 1
   descripcion: MyString
-  userid: 
+  userid: 1
 
 two:
   nombre: MyString
-  edad: 
-  sexo: 
+  edad: 1
+  sexo: 1
   hora: 2017-03-27
-  rutaid: 
+  rutaid: 1
   descripcion: MyString
-  userid: 
+  userid: 1
