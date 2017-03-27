@@ -46,12 +46,12 @@ FB.login(function(response){
   if (response.authResponse) {
      var access_token =   FB.getAuthResponse()['accessToken'];
      //alert('Access Token = '+ access_token);
-     //FB.api('/me?access_token='+access_token, function(response) {
+     FB.api('/me?access_token='+access_token, function(response) {
    //  alert('Good to see you, ' + response.name + '.');
-     //});
-   //} else {
+     });
+   } else {
      //alert('User cancelled login or did not fully authorize.');
-   //}
+   }
 
   var body =  $("#post_comentario").val();
  // followbusMx
