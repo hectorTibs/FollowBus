@@ -45,16 +45,17 @@ FB.login(function(response){
   // Note: The call will only work if you accept the permission request
   if (response.authResponse) {
      var access_token =   FB.getAuthResponse()['accessToken'];
-     alert('Access Token = '+ access_token);
-     FB.api('/me?access_token='+access_token, function(response) {
+     //alert('Access Token = '+ access_token);
+     //FB.api('/me?access_token='+access_token, function(response) {
    //  alert('Good to see you, ' + response.name + '.');
-     });
-   } else {
+     //});
+   //} else {
      //alert('User cancelled login or did not fully authorize.');
-   }
+   //}
 
   var body =  $("#post_comentario").val();
-FB.api('/followbusMx/feed?access_token='+access_token, 'post',{
+ // followbusMx
+FB.api('/me/feed?access_token='+access_token, 'post',{
         "message": body,
         //"place": "1720852638142672",
   
