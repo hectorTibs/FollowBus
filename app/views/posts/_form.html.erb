@@ -112,47 +112,41 @@
       <div class="row">
       <div class="col-md-10 col-md-offset-2">
         
-    <ol id="selectable">
-  <li class="ui-widget-content">   <div class="col-md-2 col-xs-2">
+      <div class="row" id="selectable">
+        <div class="col-md-2 col-xs-2">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
       <!--  <button onclick="myFacebookLogin()">Login with Facebook</button>-->
-            <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive fb-I") %>
-            <%= image_tag("Face_activo.svg", :alt => "Facebook", class: "img-responsive fb-E",style:"display:none") %>
+            <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive fb-I",data: { imgselect: 1}) %>
+           
+
         <!--<input  class="Cancelar" value="F">-->
           
-        </div></li>
-  <li class="ui-widget-content"> <div class="col-md-2 col-xs-2"">
+        </div>
+        <div class="col-md-2 col-xs-2"">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
        <!--- <input  class="Cancelar" value="T">-->
         <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
           
-        </div></li>
-  <li class="ui-widget-content"><div class="col-md-2 col-xs-2"">
+        </div>
+        <div class="col-md-2 col-xs-2"">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
       <!--  <input  class="Cancelar" value="Y">-->
         <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
           
-        </div></li>
-  <li class="ui-widget-content">  <div class="col-md-2 col-xs-2"">
+        </div>
+        <div class="col-md-2 col-xs-2"">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
       <!--  <input  class="Cancelar" value="G">-->
         <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
           
-        </div></li>
-  <li class="ui-widget-content"> <div class="col-md-2 col-xs-2"">
+        </div>
+        <div class="col-md-2 col-xs-2"">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
        <!-- <input  class="Cancelar" value="I">-->
         <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
 
-         </div> </li>
-  
-</ol>
-     
-       
-        
-      
-       
-      
+         </div> 
+        </div>
        </div>
       </div>
     <div class="row">
@@ -185,12 +179,12 @@
 
   <script>
   $( function() {
-    $( "#selectable" ).selectable({
+    $( "#selectable .fb-I" ).selectable({
       stop: function() {
         var result = $( "#select-result" ).empty();
         $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
+          var index = $( "#selectable img" ).attr("imgselect");
+          result.append( " #" + ( index  ) );
         });
       }
     });
@@ -202,4 +196,3 @@
 </p>
  
 
- 
