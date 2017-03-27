@@ -14,7 +14,7 @@
    {
    
    $('.fb-I').attr( "src", "/assets/Face_activo-f6770488e3cace3a8010291d39ee76dedf482bd4f857f88d78e912a1365d1899.svg" );
-    $('#btnfb').attr("disabled", false);
+    $('#btnfb').attr("disabled", true);
 
     $('#btnfb').click(function(){
      alert("click")
