@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_filter :authenticate_user!
+     before_filter :authenticate_user!
       before_action :set_post, only: [:show, :edit, :update, :destroy,:done]
 
   # GET /posts
@@ -12,8 +12,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
   end
-  # GET /posts/done
- 
 
   # GET /posts/new
   def new
@@ -27,7 +25,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+       @post = Post.new(post_params)
 
    # respond_to do |format|
       if @post.save
@@ -73,6 +71,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:reporteid, :comentario, :redsocial)
+      params.require(:post).permit(:reporteid, :comentario, :redsocial, :userid)
     end
 end

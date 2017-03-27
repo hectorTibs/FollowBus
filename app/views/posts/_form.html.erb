@@ -36,6 +36,7 @@
       </ul>
     </div>
   <% end %>
+    <%= hidden_field_tag :reporte_userid, current_user.id %>
   <%= f.hidden_field :reporteid, :value => params['reporte_id']%>
  <!-- <div class="row">
     <div class="col-md-12">

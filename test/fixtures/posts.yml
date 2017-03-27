@@ -4,8 +4,10 @@ one:
   reporteid: 1
   comentario: MyString
   redsocial: MyString
+  userid: 1
 
 two:
   reporteid: 1
   comentario: MyString
   redsocial: MyString
+  userid: 1

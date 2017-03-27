@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327174434) do
+ActiveRecord::Schema.define(version: 20170327182240) do
 
-  create_table "camiones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "camiones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "clave"
     t.string   "nombre"
     t.string   "tiporuta"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "empresas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "empresas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.string   "Localidad"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "identities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "identities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.index ["user_id"], name: "index_identities_on_user_id", using: :btree
   end
 
-  create_table "incidencia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "incidencia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "EmpresaId"
     t.integer  "RutaId"
     t.text     "Comentario", limit: 65535
@@ -50,22 +50,23 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "reporteid"
     t.string   "comentario"
     t.string   "redsocial"
+    t.integer  "userid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "redes_sociales", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "redes_sociales", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "reportes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "reportes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.integer  "edad"
     t.integer  "sexo"
@@ -77,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "ruta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ruta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Clave"
     t.string   "Nombre"
     t.string   "TipoRuta"
@@ -87,7 +88,7 @@ ActiveRecord::Schema.define(version: 20170327174434) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
