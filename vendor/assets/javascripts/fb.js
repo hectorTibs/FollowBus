@@ -21,7 +21,7 @@
    
  $('#btnfb').click(function(){
         $( "#selectable .ui-selected").each(function() {
-          var index = $( ".ui-selected img" ).attr("data-imgselect");
+          var index = $( ".ui-selected .fb-I" ).attr("data-imgselect");
       
 alert(index);
           switch(index) {
