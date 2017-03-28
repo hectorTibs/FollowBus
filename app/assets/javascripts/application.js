@@ -18,8 +18,9 @@
 //= require_tree .
 //= require underscore
 //= require gmaps/google
-//= require fb
 //= require jquery-ui
+//= require fb
+
 
 $(document).ready(function () {
 
