@@ -37,23 +37,20 @@ function selectableNS() {
       stop: function() {
         var result = $( "#select-result" ).empty();
         $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable img" ).attr("data-imgselect");
+          var index = $( ".ui-selected img" ).attr("data-imgselect");
           result.append( " #" + ( index  ) );
 alert(index);
           switch(index) {
 
-    case 1:
+    case '1':
       $('#btnfb').click(function(){
        myFacebookLogin();
- });
-     
+          });
         break;
-    case 2:
+    case '2':
        $('#btnfb').click(function(){
        myTwitterLogin();
- });
-
-     
+              });
         break;
     default:
       alert("opcion no seleccionada");
