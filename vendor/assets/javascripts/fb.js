@@ -14,30 +14,57 @@
    {
    
    $('.fb-I').attr( "src", "/assets/Face_activo-f6770488e3cace3a8010291d39ee76dedf482bd4f857f88d78e912a1365d1899.svg" );
+
+   $('.fb-I').attr( "data-imgselect",1);
     $('#btnfb').attr("disabled", false);
 
     $('#btnfb').click(function(){
-     alert("click")
-      myFacebookLogin();
+
+      selectable();
     });
 
 
 
-    /* FB.api("/me?access_token=EAAKa3Rvp5JcBADP6zlhkDu7wgYPEg6sM6bZA6JtINV0l4DnnZAnhKZBMlloOsym5mjE1RhImGHRcfWoy0ilODCIDiiPMv1QoBzKuFteFVhCnZAaEymLPLrLmaiqNjuABgYrwd5Oulfpx1UKiBFBWEOKmj7edo5kgrhmOoMZAFb2BWuBlCQaPU",
-                function (response) {
-                    alert('Name is ' + response.name);
-                });*/
 
   }
   else {
     $('#btnfb').attr("disabled", true);
 //    FB.login();
  $('.fb-I').attr( "src", "/assets/Face_inactivo-0df2b9e69490433510d4b1274435e076523c676e28ab15140fb810f326b27ef0.svg" );
-   
+   $('.fb-I').attr( "data-imgselect",0);
   }
 });
   };
 
+function selectable() {
+    $( "#selectable" ).selectable({
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable img" ).attr("data-imgselect");
+          result.append( " #" + ( index  ) );
+
+          switch(index) {
+    case 1:
+      myFacebookLogin();
+        break;
+    case 2:
+       myTwitterLogin();
+        break;
+    default:
+      alert("opcion no seleccionada");
+}
+
+
+        });
+      }
+    });
+}
+
+function myTwitterLogin() {
+
+  alert("twitter")
+}
 
 function myFacebookLogin() {
 

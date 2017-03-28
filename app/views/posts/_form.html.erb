@@ -116,7 +116,7 @@
         <div class="col-md-2 col-xs-2">
        <!-- <button class="Siguiente">Siguiente paso</button>-->
       <!--  <button onclick="myFacebookLogin()">Login with Facebook</button>-->
-            <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive fb-I",data: { imgselect: 1}) %>
+            <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive fb-I") %>
            
 
         <!--<input  class="Cancelar" value="F">-->
@@ -177,19 +177,7 @@
   #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
   </style>
 
-  <script>
-  $( function() {
-    $( "#selectable" ).selectable({
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable img" ).attr("data-imgselect");
-          result.append( " #" + ( index  ) );
-        });
-      }
-    });
-  } );
-  </script>
+ 
 
   <p id="feedback">
 <span>You've selected:</span> <span id="select-result">none</span>.
