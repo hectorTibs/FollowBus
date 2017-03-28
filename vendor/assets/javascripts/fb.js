@@ -22,7 +22,7 @@
  $('#btnfb').click(function(){
         $( "#selectable .ui-selected").each(function() {
           var index = $( ".ui-selected img" ).attr("data-imgselect");
-          result.append( " #" + ( index  ) );
+      
 alert(index);
           switch(index) {
 
