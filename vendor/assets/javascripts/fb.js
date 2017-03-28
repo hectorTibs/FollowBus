@@ -20,8 +20,8 @@
       selectableNS();
    
  $('#btnfb').click(function(){
-        $( "#selectable .ui-selected").each(function() {
-          var index = $( ".ui-selected .fb-I" ).attr("data-imgselect");
+        $( "#selectable .ui-selected .fb-I").each(function() {
+          var index = $(this).attr("data-imgselect");
       
 alert(index);
           switch(index) {
