@@ -19,7 +19,30 @@
     $('#btnfb').attr("disabled", false);
       selectableNS();
    
+ $('#btnfb').click(function(){
+        $( ".ui-selected", this ).each(function() {
+          var index = $( ".ui-selected img" ).attr("data-imgselect");
+          result.append( " #" + ( index  ) );
+alert(index);
+          switch(index) {
 
+    case '1':
+     myFacebookLogin();
+        break;
+    case '2':
+
+       myTwitterLogin();
+          
+        break;
+    default:
+      alert("opcion no seleccionada");
+}
+          });
+
+       
+
+
+        });
 
 
   }
@@ -33,33 +56,7 @@
   };
 
 function selectableNS() {
-    $( "#selectable" ).selectable({
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( ".ui-selected img" ).attr("data-imgselect");
-          result.append( " #" + ( index  ) );
-alert(index);
-          switch(index) {
-
-    case '1':
-      $('#btnfb').click(function(){
-       myFacebookLogin();
-          });
-        break;
-    case '2':
-       $('#btnfb').click(function(){
-       myTwitterLogin();
-              });
-        break;
-    default:
-      alert("opcion no seleccionada");
-}
-
-
-        });
-      }
-    });
+    $( "#selectable" ).selectable();
 }
 
 function myTwitterLogin() {
