@@ -23,7 +23,7 @@
         $( "#selectable .ui-selected .fb-I").each(function() {
           var index = $(this).attr("data-imgselect");
       
-alert(index);
+//alert(index);
           switch(index) {
 
     case '1':
