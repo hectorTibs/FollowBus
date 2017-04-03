@@ -1,184 +1,104 @@
 
-
+<script>
+function myFunction() {
+ location.href = "/users/auth/facebook";
+}
+</script>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-      <h1>¿Deseas dar a conocer tu suceso a la comunidad?</h1>
-<h3>Arroba a las personas o autoridades para
-                compartirles tu suceso.</h3>
-               
-  </div>
 
-         
+<div class="col-md-10 col-md-offset-1">
+  
+
+<!--<div class="jumbotron boxlogin">-->
+    <center>
+     <!-- <img src="../assets/images/logo_FB.svg" alt="Follow Bus Logo" heigt="100" width="130">-->
+     <div class="row">
+       <div class="col-md-4 col-md-offset-4">
+            <%= image_tag("logo_FB.svg", :alt => "Follow Bus Logo", class: "img-responsive") %>
+       </div>
+     </div>
+     
+      <div class="pen-title">
+        <h1>¡Bienvenido de vuelta!</h1>
+      </div>
+     <!-- <img src="../assets/images/imagen.svg" alt="Bus Logo" heigt="310" width="310">-->
+   
+      <div class="row">
+       <div class="col-md-12">
+             <%= image_tag("imagen.svg", :alt => "Bus Logo", class: "img-responsive")%>
+       </div>
+     </div>
+    </center>
+  <!--  <div class="pen-title">
+      <h3>Selecciona como acceder</h3>
+    </div>-->
+    <div class="row">
+   <div class="col-md-12">  
+   <h2>  Selecciona como acceder</h2>
+   </div>
+     
+   </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button id="myBtnFB" class="Facebook" onclick="myFunction()">Facebook</button>
+  
+      </div>
+
+       <div class="col-md-6">
+        <button class="Twitter">Twitter</button>
+      
+      </div>
     </div>
     <br>
-   
-    <div class="row" style="background-image: url('/assets/MapBackground-4614ee0e5770e376ec6430f58b3290f663773baf688e6d91e67393ab0b02d3c6.png')";>
-<br>
-  
-    <div class="col-md-6 col-md-offset-3">
-      <div class="input-group">
-        <input type="text" placeholder="Busqueda" name="name"  class="form-control">
-        <span class="input-group-addon glyphicon glyphicon-search"></span>
-      </div>
-    </div>
-  <br>
-    <div class="col-md-6 col-md-offset-3">
-   
-  <%= form_for(post) do |f| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.hidden_field :userid, :value => current_user.id %>
-  <%= f.hidden_field :reporteid, :value => params['reporte_id']%>
- <!-- <div class="row">
-    <div class="col-md-12">
-       <div class="form-group">
-      <div class="input-group-lg">
- 
-      <%= f.text_field :reporteid, autofocus: true, class: "form-control",placeholder: "reporteid",:value => params['reporte_id']  %>
-   
-    </div>
-  </div>
-    </div>
-  </div>
-   -->
-
-<!--<div class="row">
-
-<div class="col-md-6">
-  <div class="form-group">
-      <div class="input-group-lg">
-  
-    <%= f.number_field :redsocial, autofocus: true, class: "form-control",placeholder: "redsocial" %>
+   <div class="row">
+   <div class="col-md-5 col-md-offset-7">  
+   <div class="cta"><a href="#" style="font-size: 26px;">Otras Redes Sociales</a></div>
    </div>
-  </div>
-  </div>
-</div>
--->
+     
+   </div>
+      
+  </br>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class= "row">
-      <div class="col-md-12">
-        <div class="Tweets">
-          <div class="row">
-            <div class="col-md-6 col-xs-6">
-              <h3>@TransitoMTY</h3>
-            </div>
-            <div class="col-md-6 col-xs-6">
-              <h3>@TransitoSanNico</h3>
-            </div>
-        
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-xs-6">
-              <h3>@PoliciaRegia</h3>
-            </div>
-            <div class="col-md-6 col-xs-6">
-              <h3>@AlcaldeMTY</h3>
-            </div>
-          
-          </div>
-               <div class="row">
-            <div class="col-md-6 col-xs-6">
-              <h3>@PoliciaRegia</h3>
-            </div>
-            <div class="col-md-6 col-xs-6">
-              <h3>@AlcaldeMTY</h3>
-            </div>
-          
-          </div>
-    
-      </div>
+  
+      <div class="form-group">
+      <div class="input-group-lg">
+    <!--<%= f.label :email %><br />-->
+    <%= f.email_field :email, autofocus: true, class: "form-control",placeholder: "Usuario o Correo Electronico" %>
     </div>
   </div>
 
-<br>
-  <div class="form-group">
-      <div class="input-group-lg">
 
-    <%= f.text_area :comentario, autofocus: true, class: "form-control",placeholder: "comentario",rows:"6" %>
-   </div>
+  <div class="form-group">
+   <div class="input-group-lg">
+   <!-- <%= f.label :password %><br />-->
+    <%= f.password_field :password, autocomplete: "off",class: "form-control",placeholder: "Contraseña" %>
+     </div>
   </div>
-  <!--<div class="actions">
-    <%= f.submit %>
+
+ <!-- <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>-->
+<center>
+        <input type="submit" class="log" value="Conectarse">
+      </center>
+ <!-- <div class="actions">
+    <%= f.submit "Log in" %>
   </div>-->
-      <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-        
-      <div class="row" id="selectable">
-        <div class="col-md-2 col-xs-2">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-      <!--  <button onclick="myFacebookLogin()">Login with Facebook</button>-->
-            <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive fb-I") %>
-           
-
-        <!--<input  class="Cancelar" value="F">-->
-          
-        </div>
-        <div class="col-md-2 col-xs-2"">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-       <!--- <input  class="Cancelar" value="T">-->
-        <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
-          
-        </div>
-        <div class="col-md-2 col-xs-2"">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-      <!--  <input  class="Cancelar" value="Y">-->
-        <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
-          
-        </div>
-        <div class="col-md-2 col-xs-2"">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-      <!--  <input  class="Cancelar" value="G">-->
-        <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
-          
-        </div>
-        <div class="col-md-2 col-xs-2"">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-       <!-- <input  class="Cancelar" value="I">-->
-        <%= image_tag("Face_inactivo.svg", :alt => "Facebook", class: "img-responsive") %>
-
-         </div> 
-        </div>
-       </div>
-      </div>
     <div class="row">
-        <div class="col-md-6">
-       <!-- <button class="Siguiente">Siguiente paso</button>-->
-        <input type="button" class="Cancelar" value="Saltar Paso">
-          
-        </div>
-        <div class="col-md-6">
-
-        <button id="btnfb" type="submit" class="btn Siguiente btn-lg">Compartir</button>
-      <!-- <input type="submit" class="Siguiente" value="Compartir" disabled="disabled">-->
-           <!--<button class="Cancelar">Cancelar</button>-->
-        </div>
-      </div>
+   <div class="col-md-10 col-md-offset-2">  
+    <div class="cta2" style="font-size: 26px;">¿No estás inscrito?<a href="#" style="font-size: 26px;"> Deseo inscribirme ahora</a></div>
+   </div>
+     
+   </div>
+ 
 <% end %>
   </div>
   </div>
-
-    </div>
-
-
-  <style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #92c9f4; }
-  #selectable .ui-selected { background: #66afe9; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0;}
-  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
-  </style>
-
+  <!--</div>-->
  
-
-
- 
-
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
