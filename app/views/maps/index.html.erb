@@ -26,7 +26,7 @@
   <div class="col-md-2 col-md-offset-5">
 <div class="form-group">
   <label for="sel1">Seleccione Ruta:</label>
-<select class="form-control" id="sel1">
+<select class="form-control" id="sel1" onchange="myFunctionselec()">
   <option>Seleccione...</option>
    <option value=213>Ruta 213</option>
     <option value=1>Ruta 1</option>
@@ -58,7 +58,7 @@
 </div>
 
 <script type="text/javascript">
-function myFunction() {
+function myFunctionselec() {
   
     setTimeout(function(){
   handler = Gmaps.build('Google');
