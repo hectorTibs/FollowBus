@@ -84,7 +84,9 @@ var fb = {
         alert(response.error)
         callback(false);
       } else {
+         alert(response.error)
         callback(true);
+
       }
       });
       return true;
