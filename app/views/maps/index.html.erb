@@ -26,7 +26,9 @@
   <div class="col-md-2 col-md-offset-5">
 <div class="form-group">
   <label for="sel1">Seleccione Ruta:</label>
-      <option>Seleccione...</option>
+<select class="form-control" id="sel1">
+  <option>Seleccione...</option>
+ 
     <option>Ruta 1</option>
     <option>Ruta 213</option>
     <option>Ruta 88</option>
@@ -69,7 +71,7 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: {lat: 25.818422, lng: 100.244066}
-    http:
+
   });
   directionsDisplay.setMap(map);
 
