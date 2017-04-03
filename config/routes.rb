@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   resources :empresas
   get 'index/welcome'
 root 'reportes#new'
-devise_scope :user do
-get 'signin' => "devise/sessions#new", :as => :login
-end
+#devise_scope :user do
+#get 'signin' => "devise/sessions#new", :as => :login
+#end
 
 get '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
 #match "/posts", to: "posts#new", :via => 'get'
