@@ -112,12 +112,35 @@ vp4=-100.3206558;
 
   calculateAndDisplayRoute(directionsService, directionsDisplay);
   document.getElementById('mode').addEventListener('change', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
+    calculateAndDisplayRoute(directionsService, directionsDisplay,ruta);
   });
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay,ruta) {
  // var selectedMode = document.getElementById('mode').value;
+
+ var vp1,vp2, vp3,vp4;
+
+ if(ruta==213){
+vp1=25.818422;
+vp2=-100.1998019;
+vp3=25.726406;
+vp4=-100.3140925;
+
+ }else if(ruta==1){
+vp1=25.7671309;
+vp2=-100.2885931;
+vp3=25.6527492;
+vp4=-100.2994418;
+
+ }else{
+
+
+vp1=25.8186659;
+vp2=-100.2460871;
+vp3=25.6765652;
+vp4=-100.3206558;
+ }
  var selectedMode = "DRIVING"
   directionsService.route({
 
