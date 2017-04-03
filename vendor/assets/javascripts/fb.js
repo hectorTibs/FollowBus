@@ -76,7 +76,9 @@ var fb = {
     }); 
   },
   publish : function (publishObj,callback,noReTry) {
-  // publishObj: http://developers.facebook.com/docs/reference/api/post   
+  // publishObj: http://developers.facebook.com/docs/reference/api/post  
+  alert(fb.logged);
+  alert(fb.hasPerm('publish_actions'));
     if (fb.logged && fb.hasPerm('publish_actions'))
     { 
       alert("Funcion1");
