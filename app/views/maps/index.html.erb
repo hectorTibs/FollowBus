@@ -26,8 +26,12 @@
   <div class="col-md-2 col-md-offset-5">
 <div class="form-group">
   <label for="sel1">Seleccione Ruta:</label>
-    <%= collection_select(:reporte, :rutaid, Camione.all, :id, :nombre, 
-                 {:prompt => 'Seleccione...'}, {:class => 'form-control'}) %>
+      <option>Seleccione...</option>
+    <option>Ruta 1</option>
+    <option>Ruta 213</option>
+    <option>Ruta 88</option>
+
+  </select>
 </div>
   </div>
 
