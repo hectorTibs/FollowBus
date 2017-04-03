@@ -27,8 +27,8 @@
 <div class="form-group">
   <label for="sel1">Seleccione Ruta:</label>
 <select class="form-control" id="sel1" onchange="myFunctionselec()">
-  <option>Seleccione...</option>
-   <option value=213 selected="selected">Ruta 213</option>
+  <option selected="selected">Seleccione...</option>
+   <option value=213 >Ruta 213</option>
     <option value=1>Ruta 1</option>
     <option value=88> Ruta 88</option>
 
@@ -64,35 +64,38 @@ function myFunctionselec() {
   handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
       var x = document.getElementById("sel1").value;
-      alert(x);
+   
 initMap(x);
 });
  }, 2000);
   
 }
-
+/*
 setTimeout(function(){
   handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 initMap(213);
 });
- }, 2000);
+ }, 2000);*/
 function initMap(ruta) {
 var vp1,vp2, vp3,vp4;
-
+alert(ruta)
  if(ruta==213){
+  alert("R213")
 vp1='25.818422';
 vp2='-100.1998019';
 vp3='25.726406';
 vp4='-100.3140925';
 
  } if(ruta==1){
+    alert("R1")
 vp1='25.7671309';
 vp2='-100.2885931';
 vp3='25.6527492';
 vp4='-100.2994418';
 
  }if(ruta==88){
+    alert("R88")
 vp1='25.8186659';
 vp2='-100.2460871';
 vp3='25.6765652';
