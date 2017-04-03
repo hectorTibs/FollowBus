@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :redes_sociales
   resources :empresas
   get 'index/welcome'
-root 'reportes/new'
+root 'reportes#new'
 
 devise_scope :user do
   get 'signin' => "devise/sessions#new", :as => :login
