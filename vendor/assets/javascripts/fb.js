@@ -75,7 +75,7 @@ var fb = {
   },
   publish : function (publishObj,callback,noReTry) {
   // publishObj: http://developers.facebook.com/docs/reference/api/post   
-    if (fb.logged && fb.hasPerm('publish_stream'))
+    if (fb.logged && fb.hasPerm('publish_actions'))
     { 
       FB.api('/me/feed', 'post', publishObj, function(response) {
       if (!response || response.error) {
