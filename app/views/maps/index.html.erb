@@ -28,10 +28,9 @@
   <label for="sel1">Seleccione Ruta:</label>
 <select class="form-control" id="sel1">
   <option>Seleccione...</option>
- 
-    <option>Ruta 1</option>
-    <option>Ruta 213</option>
-    <option>Ruta 88</option>
+   <option value=213>Ruta 213</option>
+    <option value=1>Ruta 1</option>
+    <option value=88> Ruta 88</option>
 
   </select>
 </div>
@@ -59,18 +58,54 @@
 </div>
 
 <script type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("sel1").value;
+    setTimeout(function(){
+  handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      var x = document.getElementById("sel1").value;
+initMap(x);
+});
+ }, 2000);
+  
+}
+
 setTimeout(function(){
   handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-initMap();
+initMap(213);
 });
  }, 2000);
-function initMap() {
+function initMap(ruta) {
+var vp1,vp2, vp3,vp4;
+
+ if(ruta==213){
+vp1=25.818422;
+vp2=-100.1998019;
+vp3=25.726406;
+vp4=-100.3140925;
+
+ }else if(ruta==1){
+vp1=25.7671309;
+vp2=-100.2885931;
+vp3=25.6527492;
+vp4=-100.2994418;
+
+ }else{
+
+
+vp1=25.8186659;
+vp2=-100.2460871;
+vp3=25.6765652;
+vp4=-100.3206558;
+ }
+
+
   var directionsDisplay = new google.maps.DirectionsRenderer;
   var directionsService = new google.maps.DirectionsService;
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
-    center: {lat: 25.818422, lng: -100.1998019}
+    center: {lat: vp1, lng: vp2}
 
   });
   directionsDisplay.setMap(map);
@@ -86,8 +121,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
  var selectedMode = "DRIVING"
   directionsService.route({
 
-    origin: {lat: 25.818422, lng: -100.1998019},  // Haight.
-    destination: {lat: 25.726406, lng: -100.3140925},  // Ocean Beach.
+    origin: {lat: vp1, lng: vp2},  // Haight.
+    destination: {lat: vp3, lng: vp4},  // Ocean Beach.
     // Note that Javascript allows us to access the constant
     // using square brackets and a string value as its
     // "property."
