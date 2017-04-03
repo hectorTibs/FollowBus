@@ -1,180 +1,116 @@
-var fb = {
-  config :{
-  // CONFIG VARS: 
 
-    app_id : '733224400184471', 
 
-    use_xfbml : true,
 
-    extendPermissions : 'publish_actions' , 
-    // info: http://developers.facebook.com/docs/reference/api/permissions/
-
-    locale : 'es_ES' 
-    // all locales in: http://www.facebook.com/translations/FacebookLocales.xml
-
-  // END CONFIG VARS
-  },
-  perms : [],
-  hasPerm : function (perm) { for(var i=0, l=fb.perms.length; i<l; i++) { if(fb.perms[i] == perm) {return true;}} return false; },
-  logged : false,
-  user : false, // when login, is a user object: http://developers.facebook.com/docs/reference/api/user
-  login : function (callback){
-    FB.login(function(r) {
-      if (r.status == 'connected') {
-
-       fb.access_token =   FB.getAuthResponse()['accessToken'];
-        FB.api('/me/permissions?access_token='+ fb.access_token ,function(perm){
-          fb.logged = true;
-      fb.perms = [];
-      for(i in perm.data[0])
-      {
-      if (perm.data[0][i] == 1)
-      {
-        fb.perms.push(i);
-      }
-      }
-        });    
-    fb.getUser(callback);
-      } else {
-        fb.logged = false;
-        fb.perms = [];
-    callback();
-      }
-    },{scope:fb.config.extendPermissions});
-    return false;
-  },
-  syncLogin : function (callback){
-    if (!callback) callback = function(){};
-    FB.getLoginStatus(function(r) {
-      if (r.status == 'connected' ) { 
-        FB.api('/me/permissions?access_token='+ fb.access_token,function(perm){
-          fb.logged = true;
-      fb.perms = [];
-      for(i in perm.data[0])
-      {
-      if (perm.data[0][i] == 1)
-      {
-        fb.perms.push(i);
-      }
-      }
-        });    
-        fb.getUser(callback);
-        return true;
-      } else {
-        fb.logged = false;
-        callback();
-        return false;
-      }
+     window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '733224400184471',
+      xfbml      : true,
+      version    : 'v2.8'
     });
-  },
-  logout : function(callback) {FB.logout(callback);},
-  getUser : function(callback){
-    FB.api('/me?access_token='+ fb.access_token, function(r){
-      var user = r;
-      user.picture = "https://graph.facebook.com/"+user.id+"/picture";
-      fb.user=user; callback(user); 
-    }); 
-  },
-  publish : function (publishObj,callback,noReTry) {
-  // publishObj: http://developers.facebook.com/docs/reference/api/post  
+    FB.AppEvents.logPageView();
 
+      FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') 
+   {
+   
+   $('.fb-I').attr( "src", "/assets/Face_activo-f6770488e3cace3a8010291d39ee76dedf482bd4f857f88d78e912a1365d1899.svg" );
 
-    //if (fb.logged && fb.hasPerm('publish_actions')) hasperm return false 
-    if (fb.logged)
-    { 
-    
-      FB.api('/me/feed?access_token='+ fb.access_token, 'post', publishObj, function(response) {
-      if (!response || response.error) {
-        
-        callback(false);
-      } else {
-        
-        callback(true);
+   $('.fb-I').attr( "data-imgselect",1);
+    $('#btnfb').attr("disabled", false);
+      selectableNS();
+   
+ $('#btnfb').click(function(){
+        $( "#selectable .ui-selected .fb-I").each(function() {
+          var index = $(this).attr("data-imgselect");
+      
+//alert(index);
+          switch(index) {
 
-      }
-      });
-      return true;
-    }
-    else
-    { 
-      if (!noReTry)
-        return fb.login(function() { return fb.publish(publishObj,callback,1)});
-      else
-      {
-        // alert("Funcion2");
-        callback(false);
-        return false;
-      }
-    }
-  },
-  readyFuncs : [],
-  ready: function(func){fb.readyFuncs.push(func)},
-  launchReadyFuncs : function () {for(var i=0,l=fb.readyFuncs.length;i<l;i++){fb.readyFuncs[i]();};}
+    case '1':
+     myFacebookLogin();
+        break;
+    case '2':
+
+       myTwitterLogin();
+          
+        break;
+    default:
+      alert("opcion no seleccionada");
 }
-window.fbAsyncInit = function() { 
-  if (fb.config.app_id) FB.init({appId: fb.config.app_id, status: true, cookie: true, xfbml: fb.config.use_xfbml});
-  fb.syncLogin(fb.launchReadyFuncs);
-};
-var oldload = window.onload;
-window.onload = function() {
-  var d = document.createElement('div'); d.id="fb-root"; document.getElementsByTagName('body')[0].appendChild(d);
-  var e = document.createElement('script'); e.async = true; e.src = document.location.protocol + '//connect.facebook.net/'+fb.config.locale+'/all.js';
-  document.getElementById('fb-root').appendChild(e);
-  if (typeof oldload == 'function') oldload();
-};
+          });
+
+       
 
 
+        });
 
 
-
-
-
-     // Cuando la pagina carga miramos si ya hay un usuario identificado.
-fb.ready(function(){ 
-  if (fb.logged)
-  {
-    // Cambiamos el link de identificarse por el nombre y la foto del usuario.
-    html = "<p>Hola " + fb.user.name + "</p>";
-    html += '<p><img src="' + fb.user.picture + '"/></p>';
-    html += '<p><a href="#" onclick="fb.logout(); return false;">Salir</a></p>';
-    document.getElementById("conectar_facebook").innerHTML = html;
+  }
+  else {
+    $('#btnfb').attr("disabled", true);
+//    FB.login();
+ $('.fb-I').attr( "src", "/assets/Face_inactivo-0df2b9e69490433510d4b1274435e076523c676e28ab15140fb810f326b27ef0.svg" );
+   $('.fb-I').attr( "data-imgselect",0);
   }
 });
+  };
 
-// Funcion para logarse con Facebook.
-function login() {
-  fb.login(function(){ 
-    if (fb.logged) {
-      // Cambiamos el link de identificarse por el nombre y la foto del usuario.
-      html = "<p>Hola " + fb.user.name + "</p>";
-      html += "<p><img src='" + fb.user.picture + "'/></p>";
-      document.getElementById("conectar_facebook").innerHTML = html;
-    } else {
-      alert("No se pudo identificar al usuario");
-    }
-  })
-};
+function selectableNS() {
+    $( "#selectable" ).selectable();
+}
 
+function myTwitterLogin() {
 
-// Funcion para publicar un mensaje en tu muro
-var publish = function () {
-    fb.publish({
-     /* message : "Estoy probando un script para que la gente publique desde mi/s web/s en Facebook",
-      picture : "http://blog.ikhuerta.com/wp-content/themes/ikhuerta3/images/ikhuerta.jpg",
-      link : "http://blog.ikhuerta.com/usando-facebook-graph-api-con-javascript-sdk-pero-aun-mas-sencillo",
-      name : "Simple Facebook Graph Javascript SDK",
-      description : "Facebook Graph es una nueva forma de conectar tu web Facebook. Con este script es muy fácil conseguirlo :)",*/
-       "message": "Prueba",
-        "place": "1720852638142672",
+  alert("twitter")
+}
+
+function myFacebookLogin() {
+
+FB.login(function(response){
+  // Note: The call will only work if you accept the permission request
+  if (response.authResponse) {
+     var access_token =   FB.getAuthResponse()['accessToken'];
+     //alert('Access Token = '+ access_token);
+     FB.api('/me?access_token='+access_token, function(response) {
+   //  alert('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     //alert('User cancelled login or did not fully authorize.');
+   }
+
+  var body =  $("#post_comentario").val();
+ // followbusMx
+FB.api('/me/feed?access_token='+access_token, 'post',{
+        "message": body,
+        //"place": "1720852638142672",
   
-      //  "tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
+        //"tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
        // "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg",
         "privacy":{"value":"SELF"}
      //  "privacy":{"value":"CUSTOM","allow":"1720852638142672"}
-    },function(published){ 
-      if (published)
-       alert("publicado!");
-      else
-       alert("No publicado :(, seguramente porque no estas identificado o no diste permisos");
-    });  
+      
+    }, function(response) {
+  if (!response || response.error) {
+    alert('Ocurrio un problema al compartir la informacion');
+  } else {
+
+
+
+    $('#shareM').modal('show');
+    setTimeout(function(){ $('#shareM').modal('hide'); }, 3000);
+  }
+});
+
+
+}, {scope: 'publish_actions'});
+
 }
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  /*Facebook Login status*/
