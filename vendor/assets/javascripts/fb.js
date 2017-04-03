@@ -21,7 +21,9 @@ var fb = {
   login : function (callback){
     FB.login(function(r) {
       if (r.status == 'connected') {
-        FB.api('/me/permissions',function(perm){
+
+       fb.access_token =   FB.getAuthResponse()['accessToken'];
+        FB.api('/me/permissions?access_token='+ fb.access_token ,function(perm){
           fb.logged = true;
       fb.perms = [];
       for(i in perm.data[0])
@@ -45,7 +47,7 @@ var fb = {
     if (!callback) callback = function(){};
     FB.getLoginStatus(function(r) {
       if (r.status == 'connected' ) { 
-        FB.api('/me/permissions',function(perm){
+        FB.api('/me/permissions?access_token='+ fb.access_token,function(perm){
           fb.logged = true;
       fb.perms = [];
       for(i in perm.data[0])
@@ -67,7 +69,7 @@ var fb = {
   },
   logout : function(callback) {FB.logout(callback);},
   getUser : function(callback){
-    FB.api('/me', function(r){
+    FB.api('/me?access_token='+ fb.access_token, function(r){
       var user = r;
       user.picture = "https://graph.facebook.com/"+user.id+"/picture";
       fb.user=user; callback(user); 
@@ -77,7 +79,7 @@ var fb = {
   // publishObj: http://developers.facebook.com/docs/reference/api/post   
     if (fb.logged && fb.hasPerm('publish_actions'))
     { 
-      FB.api('/me/feed', 'post', publishObj, function(response) {
+      FB.api('/me/feed?access_token='+ fb.access_token, 'post', publishObj, function(response) {
       if (!response || response.error) {
         callback(false);
       } else {
