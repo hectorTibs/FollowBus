@@ -79,6 +79,7 @@ var fb = {
   // publishObj: http://developers.facebook.com/docs/reference/api/post   
     if (fb.logged && fb.hasPerm('publish_actions'))
     { 
+      alert("Funcion1")
       FB.api('/me/feed?access_token='+ fb.access_token, 'post', publishObj, function(response) {
       if (!response || response.error) {
         alert(response.error)
@@ -94,9 +95,10 @@ var fb = {
     else
     { 
       if (!noReTry)
-        return fb.login(function() { return fb.publish(publishObj,callback,1)});
+        return fb.login(function() {  alert("Funcion3") return fb.publish(publishObj,callback,1)});
       else
       {
+         alert("Funcion2")
         callback(false);
         return false;
       }
