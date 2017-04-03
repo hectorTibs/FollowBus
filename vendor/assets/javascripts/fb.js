@@ -81,6 +81,7 @@ var fb = {
     { 
       FB.api('/me/feed?access_token='+ fb.access_token, 'post', publishObj, function(response) {
       if (!response || response.error) {
+        alert(response.error)
         callback(false);
       } else {
         callback(true);
