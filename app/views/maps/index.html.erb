@@ -70,7 +70,7 @@ function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
-    center: {lat: 25.818422, lng: 100.244066}
+    center: {lat: 25.818422, lng: -100.1998019}
 
   });
   directionsDisplay.setMap(map);
@@ -86,7 +86,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
  var selectedMode = "TRANSIT"
   directionsService.route({
 
-    origin: {lat: 25.818422, lng: 100.244066},  // Haight.
+    origin: {lat: 25.818422, lng: -100.1998019},  // Haight.
     destination: {lat: 25.726406, lng: -100.3140925},  // Ocean Beach.
     // Note that Javascript allows us to access the constant
     // using square brackets and a string value as its
