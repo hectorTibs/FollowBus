@@ -59,11 +59,12 @@
 
 <script type="text/javascript">
 function myFunction() {
-    var x = document.getElementById("sel1").value;
+  
     setTimeout(function(){
   handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
       var x = document.getElementById("sel1").value;
+      alert(x);
 initMap(x);
 });
  }, 2000);
