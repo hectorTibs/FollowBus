@@ -151,11 +151,18 @@ function login() {
 // Funcion para publicar un mensaje en tu muro
 var publish = function () {
     fb.publish({
-      message : "Estoy probando un script para que la gente publique desde mi/s web/s en Facebook",
+     /* message : "Estoy probando un script para que la gente publique desde mi/s web/s en Facebook",
       picture : "http://blog.ikhuerta.com/wp-content/themes/ikhuerta3/images/ikhuerta.jpg",
       link : "http://blog.ikhuerta.com/usando-facebook-graph-api-con-javascript-sdk-pero-aun-mas-sencillo",
       name : "Simple Facebook Graph Javascript SDK",
-      description : "Facebook Graph es una nueva forma de conectar tu web Facebook. Con este script es muy fácil conseguirlo :)"
+      description : "Facebook Graph es una nueva forma de conectar tu web Facebook. Con este script es muy fácil conseguirlo :)"*/
+       "message": "Estoy probando un script para que la gente publique desde mi/s web/s en Facebook",
+        //"place": "1720852638142672",
+  
+        //"tags":"AaJ0zF2vGsFX0xAu6xjEiLxENzPohC1g2WJRoacUzZuClPcaTfOEKR_1btTMn6hEhdZ-0rLyI3W4R8WjCFWelwGgatqkBgFhMSIGxXUKrIjlUQ" ,
+       // "object_attachment":"http://s3.amazonaws.com/digitaltrends-uploads-prod/2016/08/Mustang-GT500.jpg",
+        "privacy":{"value":"SELF"}
+     //  "privacy":{"value":"CUSTOM","allow":"1720852638142672"}
     },function(published){ 
       if (published)
        alert("publicado!");
